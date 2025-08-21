@@ -1,0 +1,817 @@
+[
+  {
+    "id": 1,
+    "title": "Grillet citron- og urtekylling (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz kyllingebryst",
+      "1 oz olivenolie",
+      "0.5 oz frisk citronsaft",
+      "0.1 oz hakket frisk rosmarin",
+      "0.1 oz hakket frisk timian",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Mariner kyllingen i olivenolie, citron, urter, salt og peber i 15–30 minutter. 2. Grill ved medium-høj varme 6–8 minutter per side til 74°C. 3. Lad hvile 5 minutter, skær i skiver og server med dampede grøntsager.",
+    "image": "/assets/grilled-lemon-herb-chicken.svg"
+  },
+  {
+    "id": 2,
+    "title": "Grillet citron- og urtekylling (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz kyllingebryst",
+      "0.5 oz olivenolie",
+      "0.25 oz frisk citronsaft",
+      "0.05 oz hakket frisk rosmarin",
+      "0.05 oz hakket frisk timian",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Mariner kylling 10–20 minutter. 2. Grill 5–7 minutter per side indtil gennemstegt. 3. Lad hvile 3 minutter, skær og server med en grøn salat.",
+    "image": "/assets/grilled-lemon-herb-chicken.svg"
+  },
+  {
+    "id": 3,
+    "title": "Kalkun- og grøntsagspande (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz hakket kalkun (93% lean)",
+      "3 oz peberfrugt, skåret",
+      "3 oz squash, skåret",
+      "2 oz løg, hakket",
+      "1 oz olivenolie",
+      "0.05 oz salt",
+      "0.02 oz sort peber",
+      "0.1 oz hakket hvidløg"
+    ],
+    "instructions": "1. Varm olie i en pande, sauter løg og hvidløg til de er klare. 2. Tilsæt hakket kalkun og brun. 3. Tilsæt peberfrugt og squash og steg til møre. 4. Krydr og server straks.",
+    "image": "/assets/turkey-veggie-skillet.svg"
+  },
+  {
+    "id": 4,
+    "title": "Kalkun- og grøntsagspande (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz hakket kalkun (93% lean)",
+      "2 oz peberfrugt, skåret",
+      "2 oz squash, skåret",
+      "1 oz løg, hakket",
+      "0.5 oz olivenolie",
+      "0.03 oz salt",
+      "0.01 oz sort peber",
+      "0.05 oz hakket hvidløg"
+    ],
+    "instructions": "1. Sauter løg og hvidløg i olie. 2. Tilsæt kalkun og steg til gennemstegt. 3. Rør grøntsager i og steg til møre. 4. Krydr og server med bladgrønt.",
+    "image": "/assets/turkey-veggie-skillet.svg"
+  },
+  {
+    "id": 5,
+    "title": "Sprødstegt laks med asparges (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz laksefilet",
+      "6 oz asparges",
+      "1 oz olivenolie",
+      "0.2 oz citronsaft",
+      "0.05 oz salt",
+      "0.02 oz sort peber",
+      "0.05 oz hakket dild"
+    ],
+    "instructions": "1. Krydr laks med salt, peber og dild. 2. Steg laksen sprødt på pande 4–5 minutter med skindsiden nedad, vend og steg 2–3 minutter. 3. Steg eller bag asparges til møre. 4. Server med citron.",
+    "image": "/assets/pan-seared-salmon.svg"
+  },
+  {
+    "id": 6,
+    "title": "Sprødstegt laks med asparges (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz laksefilet",
+      "4 oz asparges",
+      "0.5 oz olivenolie",
+      "0.1 oz citronsaft",
+      "0.03 oz salt",
+      "0.01 oz sort peber",
+      "0.03 oz hakket dild"
+    ],
+    "instructions": "1. Krydr og steg laks 3–4 minutter per side til den er gennemstegt. 2. Tilbered asparges til sprød-mør. 3. Anret og dryp med citron og dild.",
+    "image": "/assets/pan-seared-salmon.svg"
+  },
+  {
+    "id": 7,
+    "title": "Oksekød og broccoli wok (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz flankesteak, tyndt skåret",
+      "6 oz broccoli buketter",
+      "2 oz løg, skåret",
+      "1 oz avocado- eller neutral olie",
+      "0.5 oz lav-sodium soja (uden sukker)",
+      "0.2 oz riseddike",
+      "0.1 oz revet ingefær",
+      "0.05 oz hakket hvidløg"
+    ],
+    "instructions": "1. Wok eller steg kødet hurtigt i varm olie til brunet; tag af. 2. Wok løg og broccoli til sprødt-møre. 3. Kom kødet tilbage, tilsæt soja, eddike, ingefær og hvidløg; vend og varm igennem. 4. Server varmt.",
+    "image": "/assets/beef-broccoli.svg"
+  },
+  {
+    "id": 8,
+    "title": "Oksekød og broccoli wok (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz flankesteak, tyndt skåret",
+      "4 oz broccoli buketter",
+      "1 oz løg, skåret",
+      "0.5 oz avocado- eller neutral olie",
+      "0.3 oz lav-sodium soja (uden sukker)",
+      "0.1 oz riseddike",
+      "0.05 oz revet ingefær",
+      "0.03 oz hakket hvidløg"
+    ],
+    "instructions": "1. Steg kødet til det er brunet; læg til side. 2. Wok grøntsager til møre. 3. Tilsæt kødet med saucen og varm igennem. 4. Server straks.",
+    "image": "/assets/beef-broccoli.svg"
+  },
+  {
+    "id": 9,
+    "title": "Rejer med squashnudler (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz rejer, pillede og rensede",
+      "8 oz squashnudler",
+      "1 oz olivenolie",
+      "0.1 oz citronskal",
+      "0.05 oz hakket hvidløg",
+      "0.05 oz chiliflager (valgfrit)",
+      "0.03 oz salt"
+    ],
+    "instructions": "1. Sauter hvidløg kort i olie. 2. Tilsæt rejer og steg til de er rosa. 3. Kom squashnudler og citronskal i, varm 1–2 minutter. 4. Krydr og server.",
+    "image": "/assets/shrimp-zoodles.svg"
+  },
+  {
+    "id": 10,
+    "title": "Rejer med squashnudler (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz rejer, pillede og rensede",
+      "6 oz squashnudler",
+      "0.5 oz olivenolie",
+      "0.05 oz citronskal",
+      "0.03 oz hakket hvidløg",
+      "0.02 oz chiliflager (valgfrit)",
+      "0.02 oz salt"
+    ],
+    "instructions": "1. Steg rejer med hvidløg til de er færdige. 2. Tilsæt zoodles og citronskal, varm igennem 1–2 minutter. 3. Krydr og server.",
+    "image": "/assets/shrimp-zoodles.svg"
+  },
+  {
+    "id": 11,
+    "title": "Æg og spinat røræg (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "4 store æg (ca. 8 oz hele æg)",
+      "3 oz frisk spinat",
+      "1 oz peberfrugt, hakket",
+      "0.5 oz olivenolie",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Pisk æg og krydr. 2. Sauter peberfrugt og spinat i olie til spinat er visnet. 3. Tilsæt æggene og rør til de er faste. 4. Server varme.",
+    "image": "/assets/egg-spinach-scramble.svg"
+  },
+  {
+    "id": 12,
+    "title": "Æg og spinat røræg (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "3 store æg (ca. 6 oz hele æg)",
+      "2 oz frisk spinat",
+      "0.5 oz peberfrugt, hakket",
+      "0.3 oz olivenolie",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Sauter grøntsager i olie. 2. Tilsæt piskede æg og rør til gennemstegt. 3. Anret og nyd.",
+    "image": "/assets/egg-spinach-scramble.svg"
+  },
+  {
+    "id": 13,
+    "title": "Græsk salat med feta (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "6 oz romaine og blandede grønne salater",
+      "4 oz agurk, skåret",
+      "3 oz cherrytomater",
+      "2 oz rødløg, skåret",
+      "3 oz fetaost",
+      "1 oz kalamataoliven",
+      "0.75 oz olivenolie",
+      "0.25 oz rødvinseddike",
+      "0.03 oz oregano",
+      "0.03 oz salt"
+    ],
+    "instructions": "1. Kombiner salater, agurk, tomater, løg og oliven. 2. Smuldr feta over. 3. Pisk olie, eddike og oregano og vend i salaten. 4. Server kold.",
+    "image": "/assets/greek-salad.svg"
+  },
+  {
+    "id": 14,
+    "title": "Græsk salat med feta (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "4 oz romaine og blandede grønne salater",
+      "3 oz agurk, skåret",
+      "2 oz cherrytomater",
+      "1 oz rødløg, skåret",
+      "1.5 oz fetaost",
+      "0.5 oz kalamataoliven",
+      "0.5 oz olivenolie",
+      "0.15 oz rødvinseddike",
+      "0.02 oz oregano",
+      "0.02 oz salt"
+    ],
+    "instructions": "1. Vend grøntsager og oliven. 2. Top med feta. 3. Dress med olie-eddike blanding og server.",
+    "image": "/assets/greek-salad.svg"
+  },
+  {
+    "id": 15,
+    "title": "Tun salat i salatblade (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz tun på dåse i vand, drænet",
+      "2 oz selleri, hakket",
+      "2 oz rødløg, fint hakket",
+      "2 oz naturel græsk yoghurt (uden tilsat sukker)",
+      "1 oz hakket syltet agurk (valgfrit)",
+      "0.05 oz salt",
+      "0.02 oz sort peber",
+      "4 store salatblade"
+    ],
+    "instructions": "1. Bland tun med yoghurt, selleri, løg og evt. syltet agurk. 2. Smag til og krydr. 3. Fyld i salatblade og server.",
+    "image": "/assets/tuna-lettuce-wraps.svg"
+  },
+  {
+    "id": 16,
+    "title": "Tun salat i salatblade (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz tun på dåse i vand, drænet",
+      "1.5 oz selleri, hakket",
+      "1 oz rødløg, fint hakket",
+      "1 oz naturel græsk yoghurt (uden tilsat sukker)",
+      "0.5 oz hakket syltet agurk (valgfrit)",
+      "0.03 oz salt",
+      "0.01 oz sort peber",
+      "3 store salatblade"
+    ],
+    "instructions": "1. Kombiner ingredienser og smag til. 2. Fyld salatblade og server køligt.",
+    "image": "/assets/tuna-lettuce-wraps.svg"
+  },
+  {
+    "id": 17,
+    "title": "Stegt svinemørbrad med rosenkål (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz svinemørbrad",
+      "6 oz rosenkål, halveret",
+      "1 oz olivenolie",
+      "0.1 oz frisk rosmarin",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Gnid mørbrad med olie, rosmarin, salt og peber. 2. Steg i ovn ved 200°C i 20–25 minutter til 63°C. 3. Steg rosenkål med olie til karamelliseret. 4. Skær mørbrad i skiver og server.",
+    "image": "/assets/pork-tenderloin.svg"
+  },
+  {
+    "id": 18,
+    "title": "Stegt svinemørbrad med rosenkål (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz svinemørbrad",
+      "4 oz rosenkål, halveret",
+      "0.5 oz olivenolie",
+      "0.05 oz frisk rosmarin",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Krydr og steg mørbrad til den er gennemstegt. 2. Bag rosenkål til møre. 3. Skær og server sammen.",
+    "image": "/assets/pork-tenderloin.svg"
+  },
+  {
+    "id": 19,
+    "title": "Bagt torsk med cherrytomater (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz torskefilet",
+      "6 oz cherrytomater",
+      "1 oz olivenolie",
+      "0.05 oz hakket hvidløg",
+      "0.05 oz hakket basilikum",
+      "0.03 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Læg torsk i et fad og omgiv med tomater. 2. Dryp med olie, tilsæt hvidløg og basilikum. 3. Bag ved 200°C i 12–15 minutter til fisken flager. 4. Krydr og server.",
+    "image": "/assets/baked-cod.svg"
+  },
+  {
+    "id": 20,
+    "title": "Bagt torsk med cherrytomater (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz torskefilet",
+      "4 oz cherrytomater",
+      "0.5 oz olivenolie",
+      "0.03 oz hakket hvidløg",
+      "0.03 oz hakket basilikum",
+      "0.02 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Arranger torsk og tomater, dryp med olie og krydr. 2. Bag til fisken er gennemstegt. 3. Server varm.",
+    "image": "/assets/baked-cod.svg"
+  },
+  {
+    "id": 21,
+    "title": "Kylling med blomkålsris i skål (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz kogt kyllingebryst, revet",
+      "8 oz blomkålsris",
+      "3 oz peberfrugt, hakket",
+      "2 oz avocado, skåret",
+      "1 oz olivenolie",
+      "0.05 oz spidskommen",
+      "0.03 oz salt"
+    ],
+    "instructions": "1. Sauter blomkålsris i olie med spidskommen og salt til møre. 2. Varm kylling og bland med peberfrugt. 3. Anret i skål med avocado på toppen.",
+    "image": "/assets/chicken-cauliflower-bowl.svg"
+  },
+  {
+    "id": 22,
+    "title": "Kylling med blomkålsris i skål (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz kogt kyllingebryst, revet",
+      "6 oz blomkÃ¥lsris",
+      "2 oz peberfrugt, hakket",
+      "1 oz avocado, skåret",
+      "0.5 oz olivenolie",
+      "0.03 oz spidskommen",
+      "0.02 oz salt"
+    ],
+    "instructions": "1. Tilbered blomkÃ¥lsris med krydderi. 2. Bland med opvarmet kylling og peberfrugt. 3. Top med avocado og server.",
+    "image": "/assets/chicken-cauliflower-bowl.svg"
+  },
+  {
+    "id": 23,
+    "title": "Bøf med ovnbagte rodfrugter (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz sirloin steak",
+      "8 oz blandede rodfrugter (gulerod, persillerod, kålroe)",
+      "1 oz olivenolie",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Vend rodfrugter i olie, salt og peber; bag ved 220°C til møre. 2. Krydr bøffen og steg eller grill til ønsket stegegrad. 3. Lad hvile, skær og server med grøntsagerne.",
+    "image": "/assets/steak-roasted-veg.svg"
+  },
+  {
+    "id": 24,
+    "title": "Bøf med ovnbagte rodfrugter (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz sirloin steak",
+      "6 oz blandede rodfrugter",
+      "0.5 oz olivenolie",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Bag rodfrugter til karamelliserede. 2. Tilbered bøffen til ønsket grad. 3. Lad hvile, skær og server med grøntsager.",
+    "image": "/assets/steak-roasted-veg.svg"
+  },
+  {
+    "id": 25,
+    "title": "Linse- og grøntsagsgryde (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "6 oz tørrede linser (kogt vægt ca. 12 oz)",
+      "6 oz gulerødder, hakket",
+      "6 oz selleri, hakket",
+      "6 oz tomater, hakket (uden tilsat sukker)",
+      "1 oz olivenolie",
+      "0.1 oz timian",
+      "0.05 oz salt",
+      "0.05 oz sort peber",
+      "0.1 oz hakket hvidløg"
+    ],
+    "instructions": "1. Sauter hvidløg i olie, tilsæt gulerod og selleri til de er bløde. 2. Tilsæt linser og tomater, dæk med vand og simr til linserne er møre (20–30 minutter). 3. Krydr med timian, salt og peber. Server varm.",
+    "image": "/assets/lentil-stew.svg"
+  },
+  {
+    "id": 26,
+    "title": "Linse- og grøntsagsgryde (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "4 oz tørrede linser (kogt vægt ca. 8 oz)",
+      "4 oz gulerødder, hakket",
+      "4 oz selleri, hakket",
+      "4 oz tomater, hakket (uden tilsat sukker)",
+      "0.5 oz olivenolie",
+      "0.05 oz timian",
+      "0.03 oz salt",
+      "0.03 oz sort peber",
+      "0.05 oz hakket hvidløg"
+    ],
+    "instructions": "1. Sauter grøntsager i olie. 2. Tilsæt linser, tomater og vand; simr til linserne er møre. 3. Krydr og server varm.",
+    "image": "/assets/lentil-stew.svg"
+  },
+  {
+    "id": 27,
+    "title": "Kalkunkødboller i tomatsauce (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz hakket kalkun",
+      "1 oz revet parmesan",
+      "1 oz æg (ca. 1 stort æg)",
+      "2 oz løg, fint hakket",
+      "8 oz tomatsauce (uden tilsat sukker)",
+      "1 oz olivenolie",
+      "0.05 oz salt",
+      "0.03 oz sort peber",
+      "0.05 oz hakket hvidløg"
+    ],
+    "instructions": "1. Bland kalkun, parmesan, æg, løg, salt og peber; form kødboller. 2. Brun kødbollerne i pande med olie, tilsæt tomatsauce og simr til gennemstegte. 3. Server med dampede grøntsager eller blomkålsris.",
+    "image": "/assets/turkey-meatballs.svg"
+  },
+  {
+    "id": 28,
+    "title": "Kalkunkødboller i tomatsauce (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz hakket kalkun",
+      "0.5 oz revet parmesan",
+      "0.5 oz æg (ca. 1 lille æg)",
+      "1 oz løg, fint hakket",
+      "6 oz tomatsauce (uden tilsat sukker)",
+      "0.5 oz olivenolie",
+      "0.03 oz salt",
+      "0.02 oz sort peber",
+      "0.03 oz hakket hvidløg"
+    ],
+    "instructions": "1. Bland ingredienser og form små kødboller. 2. Brun dem kort, tilsæt sauce og simr til gennemstegt. 3. Server med en sidesalat.",
+    "image": "/assets/turkey-meatballs.svg"
+  },
+  {
+    "id": 29,
+    "title": "Bagt kyllingelår med grønkål (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz kyllingelår med ben (med skind)",
+      "6 oz grønkål, hakket",
+      "1 oz olivenolie",
+      "0.1 oz røget paprika",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Gnid kyllingen med olie, paprika, salt og peber. 2. Bag ved 200°C i 30–35 minutter til 74°C. 3. Sauter grønkål i olie til visnet. 4. Server kylling med grønkål.",
+    "image": "/assets/baked-chicken-thighs.svg"
+  },
+  {
+    "id": 30,
+    "title": "Bagt kyllingelår med grønkål (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz kyllingelår med ben (med skind)",
+      "4 oz grønkål, hakket",
+      "0.5 oz olivenolie",
+      "0.05 oz røget paprika",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Krydr og bag kylling til gennemstegt. 2. Tilbered grønkål i pande indtil mør. 3. Anret og server.",
+    "image": "/assets/baked-chicken-thighs.svg"
+  },
+  {
+    "id": 31,
+    "title": "Quinoa og kikærtesalat (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "6 oz kogt quinoa",
+      "6 oz kogte kikærter",
+      "4 oz agurk, hakket",
+      "3 oz cherrytomater",
+      "2 oz rødløg, hakket",
+      "1 oz olivenolie",
+      "0.3 oz citronsaft",
+      "0.05 oz salt",
+      "0.03 oz sort peber"
+    ],
+    "instructions": "1. Kombiner quinoa, kikærter og grøntsager. 2. Pisk olie og citronsaft sammen og vend i salaten. 3. Krydr og server kold eller ved stuetemperatur.",
+    "image": "/assets/quinoa-chickpea-salad.svg"
+  },
+  {
+    "id": 32,
+    "title": "Quinoa og kikærtesalat (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "4 oz kogt quinoa",
+      "4 oz kogte kikærter",
+      "3 oz agurk, hakket",
+      "2 oz cherrytomater",
+      "1 oz rødløg, hakket",
+      "0.5 oz olivenolie",
+      "0.2 oz citronsaft",
+      "0.03 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Bland korn og grøntsager. 2. Dress med olivenolie og citronsaft, krydr. 3. Server som hovedret eller tilbehør.",
+    "image": "/assets/quinoa-chickpea-salad.svg"
+  },
+  {
+    "id": 33,
+    "title": "Grøntsagsomelet med avocado (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "4 store æg (ca. 8 oz)",
+      "3 oz champignon, skåret",
+      "2 oz peberfrugt, hakket",
+      "2 oz spinat",
+      "2 oz avocado, skåret",
+      "0.5 oz smør eller olie",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Sauter champignon og peberfrugt i smør/olie. 2. Tilsæt spinat og hæld herefter de piskede æg i; steg til æggene er faste. 3. Fold omeletten og top med avocado.",
+    "image": "/assets/veggie-omelette.svg"
+  },
+  {
+    "id": 34,
+    "title": "Grøntsagsomelet med avocado (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "3 store æg (ca. 6 oz)",
+      "2 oz champignon, skåret",
+      "1 oz peberfrugt, hakket",
+      "1.5 oz spinat",
+      "1 oz avocado, skåret",
+      "0.3 oz smør eller olie",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Steg grøntsager kort, tilsæt æg og lav omelet. 2. Top med avocado og server varm.",
+    "image": "/assets/veggie-omelette.svg"
+  },
+  {
+    "id": 35,
+    "title": "Laks og avocadosalat (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz kogt laks, flosset",
+      "6 oz blandede salatblade",
+      "3 oz agurk, skåret",
+      "3 oz avocado, ternet",
+      "1 oz olivenolie",
+      "0.2 oz citronsaft",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Anret salatblade, agurk og avocado. 2. Top med flosset laks. 3. Dress med olivenolie og citronsaft, krydr og server.",
+    "image": "/assets/salmon-avocado-salad.svg"
+  },
+  {
+    "id": 36,
+    "title": "Laks og avocadosalat (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz kogt laks, flosset",
+      "4 oz blandede salatblade",
+      "2 oz agurk, skåret",
+      "1.5 oz avocado, ternet",
+      "0.5 oz olivenolie",
+      "0.1 oz citronsaft",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Kombiner salatingredienser, top med laks og dress. 2. Server koldt eller ved stuetemperatur.",
+    "image": "/assets/salmon-avocado-salad.svg"
+  },
+  {
+    "id": 37,
+    "title": "Oksekødfyldte peberfrugter (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz hakket oksekød (85% lean)",
+      "3 store peberfrugter (ca. 18 oz totalt)",
+      "4 oz løg, hakket",
+      "6 oz hakkede tomater (uden sukker)",
+      "1 oz olivenolie",
+      "0.1 oz italiensk krydderi",
+      "0.05 oz salt",
+      "0.03 oz sort peber"
+    ],
+    "instructions": "1. Sauter løg i olie, tilsæt oksekød og brun. 2. Rør tomater og krydderier i. 3. Fyld i halverede peberfrugter og bag ved 190°C i 25–30 minutter til peberfrugterne er møre.",
+    "image": "/assets/stuffed-peppers.svg"
+  },
+  {
+    "id": 38,
+    "title": "Oksekødfyldte peberfrugter (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz hakket oksekød (85% lean)",
+      "2 medium peberfrugter (ca. 12 oz totalt)",
+      "2 oz løg, hakket",
+      "4 oz hakkede tomater (uden sukker)",
+      "0.5 oz olivenolie",
+      "0.05 oz italiensk krydderi",
+      "0.03 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Steg oksekød med løg, tilsæt tomater og krydr. 2. Fyld i peberfrugter og bag til møre. 3. Server varme.",
+    "image": "/assets/stuffed-peppers.svg"
+  },
+  {
+    "id": 39,
+    "title": "Grillet portobello- og grøntsagsstak (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "4 store portobello-hatte (ca. 12 oz)",
+      "6 oz aubergine, skåret",
+      "2 oz rød peber, skåret",
+      "1.5 oz olivenolie",
+      "0.05 oz balsamicoeddike",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Pensl grøntsager med olie og balsamico, krydr. 2. Grill til møre og let forkullede. 3. Anret portobello med øvrige grøntsager i stakke og server.",
+    "image": "/assets/portobello-stack.svg"
+  },
+  {
+    "id": 40,
+    "title": "Grillet portobello- og grøntsagsstak (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "3 medium portobello-hatte (ca. 9 oz)",
+      "4 oz aubergine, skåret",
+      "4 oz zucchini, skåret",
+      "1.5 oz rød peber, skåret",
+      "0.75 oz olivenolie",
+      "0.03 oz balsamicoeddike",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Grill grøntsager efter pensling med olie og eddike. 2. Sammensæt i stakke og server som en fyldig vegetarisk ret eller tilbehør.",
+    "image": "/assets/portobello-stack.svg"
+  },
+  {
+    "id": 41,
+    "title": "Hytteost med bær (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz hytteost (fuldfed eller efter præference)",
+      "4 oz blandede bær (jordbær, blåbær, hindbær)",
+      "1 oz hakkede mandler",
+      "0.05 oz kanel (valgfrit)"
+    ],
+    "instructions": "1. Kom hytteost i en skål. 2. Top med bær og mandler. 3. Drys eventuelt kanel og server koldt.",
+    "image": "/assets/cottage-cheese-berries.svg"
+  },
+  {
+    "id": 42,
+    "title": "Hytteost med bær (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz hytteost",
+      "3 oz blandede bær",
+      "0.5 oz hakkede mandler",
+      "0.03 oz kanel (valgfrit)"
+    ],
+    "instructions": "1. Kombiner hytteost og bær i en skål. 2. Top med mandler og kanel. 3. Server straks.",
+    "image": "/assets/cottage-cheese-berries.svg"
+  },
+  {
+    "id": 43,
+    "title": "Mandelpaneret kylling (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz kyllingebryst, banket tyndt",
+      "3 oz mandelmel (til panering)",
+      "1 oz æg (pisket) til sammenbinding",
+      "1 oz olivenolie",
+      "0.05 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Dyp kylling i pisket æg og pres i mandelmel krydret med salt og peber. 2. Steg i pande i olie 4–5 minutter per side til gylden og gennemstegt. 3. Lad hvile og server med citron.",
+    "image": "/assets/almond-crusted-chicken.svg"
+  },
+  {
+    "id": 44,
+    "title": "Mandelpaneret kylling (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz kyllingebryst, banket tyndt",
+      "2 oz mandelmel",
+      "0.5 oz æg (pisket)",
+      "0.5 oz olivenolie",
+      "0.03 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Paner kylling i æg og mandelmel. 2. Steg til skorpe er gylden og kyllingen er gennemstegt. 3. Server med en sidesalat.",
+    "image": "/assets/almond-crusted-chicken.svg"
+  },
+  {
+    "id": 45,
+    "title": "Blomkåls 'pizza' skål (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz blomkålsris",
+      "6 oz kogt italiensk kylling eller kalkun, skåret",
+      "4 oz peberfrugt, skåret",
+      "4 oz champignon, skåret",
+      "2 oz mozzarellaost (valgfrit)",
+      "1 oz olivenolie",
+      "0.1 oz italiensk krydderi"
+    ],
+    "instructions": "1. Sauter blomkålsris til møre. 2. Top med kød og grøntsager, drys ost og krydderi. 3. Varm til osten smelter (hvis brugt) og server.",
+    "image": "/assets/cauliflower-pizza-bowl.svg"
+  },
+  {
+    "id": 46,
+    "title": "Blomkåls 'pizza' skål (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz blomkålsris",
+      "4 oz kogt italiensk kylling eller kalkun, skåret",
+      "3 oz peberfrugt, skåret",
+      "3 oz champignon, skåret",
+      "1 oz mozzarellaost (valgfrit)",
+      "0.5 oz olivenolie",
+      "0.05 oz italiensk krydderi"
+    ],
+    "instructions": "1. Tilbered blomkålsris, top med protein og grøntsager. 2. Tilsæt en smule ost og varm igennem. 3. Server varm.",
+    "image": "/assets/cauliflower-pizza-bowl.svg"
+  },
+  {
+    "id": 47,
+    "title": "Kalkunburger i salatblade (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "10 oz hakket kalkun formet til to bøffer",
+      "4 store salatblade som 'boller'",
+      "2 oz tomatskiver",
+      "2 oz rødløgsskiver",
+      "1 oz avocado, skåret",
+      "0.05 oz salt",
+      "0.03 oz sort peber",
+      "0.5 oz olivenolie til stegning"
+    ],
+    "instructions": "1. Krydr og steg kalkunbøffer i olie til 74°C. 2. Saml i salatblade med tomat, løg og avocado. 3. Server straks.",
+    "image": "/assets/turkey-lettuce-burgers.svg"
+  },
+  {
+    "id": 48,
+    "title": "Kalkunburger i salatblade (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "6 oz hakket kalkun formet til en medium bøf",
+      "3 store salatblade",
+      "1.5 oz tomatskiver",
+      "1 oz rødløgsskiver",
+      "0.75 oz avocado, skåret",
+      "0.03 oz salt",
+      "0.02 oz sort peber",
+      "0.3 oz olivenolie til stegning"
+    ],
+    "instructions": "1. Steg bøffen til gennemstegt. 2. Pak i salatblade med fyld. 3. Nyd varm.",
+    "image": "/assets/turkey-lettuce-burgers.svg"
+  },
+  {
+    "id": 49,
+    "title": "Sprødstegt tun med grønne bønner (Mand)",
+    "serving_for": "male",
+    "ingredients": [
+      "8 oz tunsteak",
+      "6 oz grønne bønner",
+      "1 oz sesamolie",
+      "0.1 oz soja (lav-sodium, uden sukker)",
+      "0.05 oz sesamfrø",
+      "0.03 oz salt",
+      "0.02 oz sort peber"
+    ],
+    "instructions": "1. Krydr tun og steg 1–2 minutter per side for rosa i midten. 2. Sauter grønne bønner i sesamolie til sprøde-møre. 3. Dryp soja over, drys sesamfrø og server.",
+    "image": "/assets/seared-tuna.svg"
+  },
+  {
+    "id": 50,
+    "title": "Sprødstegt tun med grønne bønner (Kvinde)",
+    "serving_for": "female",
+    "ingredients": [
+      "5 oz tunsteak",
+      "4 oz grønne bønner",
+      "0.5 oz sesamolie",
+      "0.05 oz soja (lav-sodium, uden sukker)",
+      "0.03 oz sesamfrø",
+      "0.02 oz salt",
+      "0.01 oz sort peber"
+    ],
+    "instructions": "1. Steg tun kort efter ønsket stegegrad. 2. Tilbered bønner i olie til møre. 3. Afslut med soja og sesamfrø og server.",
+    "image": "/assets/seared-tuna.svg"
+  }
+]
