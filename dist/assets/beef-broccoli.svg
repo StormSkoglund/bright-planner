@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  
+  <ellipse cx="200" cy="160" rx="120" ry="60" fill="#fafafa" stroke="#e6e6e6"/>
+  <g fill="#b46b4f">
+    <ellipse cx="170" cy="150" rx="28" ry="10"/>
+    <ellipse cx="210" cy="158" rx="24" ry="9"/>
+  </g>
+  <g fill="#3fb24a">
+    <circle cx="250" cy="140" r="12"/>
+    <circle cx="230" cy="130" r="10"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="170" cy="148" r="1.5"/>
+    <circle cx="190" cy="152" r="1.5"/>
+    <circle cx="210" cy="156" r="1.5"/>
+  </g>
+  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle">Beef &amp; Broccoli Stir-Fry</text>
+</svg>

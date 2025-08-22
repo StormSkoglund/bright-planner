@@ -31,22 +31,18 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Ensure Pages site exists (enable GitHub Pages)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Ensuring GitHub Pages site exists for $GITHUB_REPOSITORY"
-          status=$(curl -s -o /dev/null -w "%{http_code}" -X PUT \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/pages" \
-            -d '{"source":{"branch":"gh-pages","path":"/"}}')
-          echo "Pages API response status: $status"
-          if [ "$status" != "201" ] && [ "$status" != "200" ]; then
-            echo "Warning: could not create Pages site (status $status). This may be ok if the site already exists."
-          fi
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - name: Download pages artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+          path: ./artifact
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./artifact
+          publish_branch: gh-pages

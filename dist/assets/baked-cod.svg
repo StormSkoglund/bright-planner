@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  
+  <!-- baking dish -->
+  <rect x="80" y="90" width="240" height="120" rx="12" fill="#fbfbfb" stroke="#eee"/>
+  <!-- cod fillet -->
+  <path d="M120 140 q50 -30 160 -10 q-20 30 -160 30" fill="#f3f6f8" stroke="#d1d9de"/>
+  <!-- cherry tomatoes -->
+  <g fill="#f26b4b">
+    <circle cx="260" cy="130" r="8"/>
+    <circle cx="240" cy="150" r="7"/>
+  </g>
+  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle">Baked Cod with Cherry Tomatoes</text>
+</svg>
