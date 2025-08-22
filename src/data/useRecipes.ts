@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
+export type ServingFor = "mand" | "kvinde";
+
 export interface Recipe {
   id: number;
   title: string;
   ingredients: string[];
   instructions: string;
   image: string;
-  serving_for?: string;
+  serving_for?: ServingFor;
   category?: string;
 }
 
@@ -16,14 +18,35 @@ export function useRecipes() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/recipes.da.json")
-      .then((res) => {
+    let cancelled = false;
+    async function fetchData() {
+      setLoading(true);
+      try {
+        const res = await fetch("/recipes.da.json");
         if (!res.ok) throw new Error("Failed to fetch recipes");
-        return res.json();
-      })
-      .then(setRecipes)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+        const data = await res.json();
+        if (!cancelled) setRecipes(data);
+      } catch (e: unknown) {
+        if (!cancelled) {
+          let msg: string;
+          if (typeof e === "object" && e !== null) {
+            const maybe = e as { message?: unknown };
+            msg = typeof maybe.message === "string" ? maybe.message : String(e);
+          } else {
+            msg = String(e);
+          }
+          setError(msg);
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    fetchData();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { recipes, loading, error };
