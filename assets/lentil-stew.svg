@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  
+  <ellipse cx="200" cy="160" rx="110" ry="60" fill="#f7efe6" stroke="#eee"/>
+  <!-- lentils and veggies -->
+  <g fill="#d9986b">
+    <circle cx="170" cy="150" r="6"/>
+    <circle cx="190" cy="152" r="6"/>
+    <circle cx="210" cy="148" r="6"/>
+  </g>
+  <g fill="#f08f4b">
+    <rect x="220" y="142" width="10" height="6" rx="2"/>
+  </g>
+  <!-- steam -->
+  <g stroke="#fff" stroke-opacity="0.7" stroke-width="2" fill="none">
+    <path d="M170 120 q8 -18 18 0"/>
+    <path d="M190 118 q8 -20 18 0"/>
+  </g>
+  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle">Lentil &amp; Vegetable Stew</text>
+</svg>
