@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <!-- plate -->
+  <circle cx="200" cy="140" r="110" fill="#fafafa" stroke="#e6e6e6"/>
+  <!-- chicken breast -->
+  <path d="M150 150 q30 -40 100 -20 q-20 30 -100 40" fill="#f6d6b2" stroke="#e1a879" stroke-width="2"/>
+  <!-- grill marks -->
+  <g stroke="#c87b4a" stroke-width="3" stroke-linecap="round">
+    <line x1="165" y1="140" x2="195" y2="135"/>
+    <line x1="185" y1="150" x2="215" y2="145"/>
+    <line x1="205" y1="160" x2="235" y2="155"/>
+  </g>
+  <!-- lemon wedge -->
+  <path d="M260 110 a18 18 0 0 1 0 36 l6 -18 z" fill="#ffed9a" stroke="#f5d76e"/>
+  <!-- herb sprigs -->
+  <g stroke="#6b8e4a" stroke-width="2" fill="none">
+    <path d="M160 115 q8 -6 14 -4"/>
+    <path d="M170 118 q8 -6 14 -4"/>
+  </g>
+  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Grilled Lemon Herb Chicken</text>
+</svg>

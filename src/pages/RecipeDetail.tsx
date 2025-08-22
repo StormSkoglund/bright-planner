@@ -11,50 +11,62 @@ export default function RecipeDetail() {
   if (!recipe) return <p className="text-red-500">Opskrift ikke fundet.</p>;
 
   return (
-    <main className="p-6 max-w-3xl mx-auto">
-      <div className="mb-4">
-        <Link to="/" className="text-blue-600 hover:underline">
-          ← Tilbage
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="mb-6">
+        <Link to="/" className="text-brand-dark hover:underline font-semibold">
+          ← Tilbage til alle opskrifter
         </Link>
       </div>
 
-      <article className="bg-white rounded-lg shadow p-6">
-        <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <h2 className="text-2xl font-bold">{recipe.title}</h2>
-            <div className="mt-2 flex items-center gap-2">
+      <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="md:flex">
+          <div className="md:w-1/2">
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-64 md:h-full object-cover"
+            />
+          </div>
+          <div className="p-8 md:w-1/2">
+            <div className="flex items-center gap-3 mb-4">
               {recipe.category && (
-                <span className="text-sm bg-amber-100 text-amber-800 px-2 py-1 rounded-full">
+                <span className="text-sm font-semibold bg-accent-light text-accent-dark px-3 py-1 rounded-full">
                   {recipe.category}
                 </span>
               )}
               {recipe.serving_for && (
-                <span className="text-sm bg-slate-100 text-slate-800 px-2 py-1 rounded-full">
+                <span className="text-sm font-semibold bg-brand-light text-brand-dark px-3 py-1 rounded-full">
                   Til: {recipe.serving_for}
                 </span>
               )}
             </div>
+            <h2 className="text-[clamp(1.25rem,6vw,2rem)] md:text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-neutral-darkest break-words">
+              {recipe.title}
+            </h2>
           </div>
-        </header>
+        </div>
 
-        <div className="mt-4">
-          <img
-            src={recipe.image}
-            alt={recipe.title}
-            className="w-full h-60 md:h-80 object-cover rounded mb-4"
-          />
-
-          <h3 className="text-lg font-semibold mt-4 mb-2">Ingredienser</h3>
-          <ul className="list-disc list-inside mb-4">
-            {recipe.ingredients.map((ing, i) => (
-              <li key={i}>{ing}</li>
-            ))}
-          </ul>
-
-          <h3 className="text-lg font-semibold mb-2">Fremgangsmåde</h3>
-          <p className="whitespace-pre-line leading-relaxed">
-            {recipe.instructions}
-          </p>
+        <div className="p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest">
+                Ingredienser
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-neutral-dark">
+                {recipe.ingredients.map((ing, i) => (
+                  <li key={i}>{ing}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest">
+                Fremgangsmåde
+              </h3>
+              <p className="whitespace-pre-line leading-relaxed text-neutral-dark">
+                {recipe.instructions}
+              </p>
+            </div>
+          </div>
         </div>
       </article>
     </main>

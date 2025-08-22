@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Grillet citron- og urtekylling (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz kyllingebryst",
       "1 oz olivenolie",
@@ -19,7 +19,7 @@
   {
     "id": 2,
     "title": "Grillet citron- og urtekylling (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz kyllingebryst",
       "0.5 oz olivenolie",
@@ -36,7 +36,7 @@
   {
     "id": 3,
     "title": "Kalkun- og grøntsagspande (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz hakket kalkun (93% lean)",
       "3 oz peberfrugt, skåret",
@@ -54,7 +54,7 @@
   {
     "id": 4,
     "title": "Kalkun- og grøntsagspande (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz hakket kalkun (93% lean)",
       "2 oz peberfrugt, skåret",
@@ -72,7 +72,7 @@
   {
     "id": 5,
     "title": "Sprødstegt laks med asparges (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz laksefilet",
       "6 oz asparges",
@@ -89,7 +89,7 @@
   {
     "id": 6,
     "title": "Sprødstegt laks med asparges (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz laksefilet",
       "4 oz asparges",
@@ -106,7 +106,7 @@
   {
     "id": 7,
     "title": "Oksekød og broccoli wok (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz flankesteak, tyndt skåret",
       "6 oz broccoli buketter",
@@ -124,7 +124,7 @@
   {
     "id": 8,
     "title": "Oksekød og broccoli wok (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz flankesteak, tyndt skåret",
       "4 oz broccoli buketter",
@@ -142,7 +142,7 @@
   {
     "id": 9,
     "title": "Rejer med squashnudler (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz rejer, pillede og rensede",
       "8 oz squashnudler",
@@ -159,7 +159,7 @@
   {
     "id": 10,
     "title": "Rejer med squashnudler (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz rejer, pillede og rensede",
       "6 oz squashnudler",
@@ -176,7 +176,7 @@
   {
     "id": 11,
     "title": "Æg og spinat røræg (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "4 store æg (ca. 8 oz hele æg)",
       "3 oz frisk spinat",
@@ -192,7 +192,7 @@
   {
     "id": 12,
     "title": "Æg og spinat røræg (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "3 store æg (ca. 6 oz hele æg)",
       "2 oz frisk spinat",
@@ -208,7 +208,7 @@
   {
     "id": 13,
     "title": "Græsk salat med feta (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "6 oz romaine og blandede grønne salater",
       "4 oz agurk, skåret",
@@ -228,7 +228,7 @@
   {
     "id": 14,
     "title": "Græsk salat med feta (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "4 oz romaine og blandede grønne salater",
       "3 oz agurk, skåret",
@@ -248,7 +248,7 @@
   {
     "id": 15,
     "title": "Tun salat i salatblade (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz tun på dåse i vand, drænet",
       "2 oz selleri, hakket",
@@ -266,7 +266,7 @@
   {
     "id": 16,
     "title": "Tun salat i salatblade (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz tun på dåse i vand, drænet",
       "1.5 oz selleri, hakket",
@@ -284,7 +284,7 @@
   {
     "id": 17,
     "title": "Stegt svinemørbrad med rosenkål (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz svinemørbrad",
       "6 oz rosenkål, halveret",
@@ -300,7 +300,7 @@
   {
     "id": 18,
     "title": "Stegt svinemørbrad med rosenkål (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz svinemørbrad",
       "4 oz rosenkål, halveret",
@@ -316,7 +316,7 @@
   {
     "id": 19,
     "title": "Bagt torsk med cherrytomater (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz torskefilet",
       "6 oz cherrytomater",
@@ -333,7 +333,7 @@
   {
     "id": 20,
     "title": "Bagt torsk med cherrytomater (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz torskefilet",
       "4 oz cherrytomater",
@@ -350,7 +350,7 @@
   {
     "id": 21,
     "title": "Kylling med blomkålsris i skål (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz kogt kyllingebryst, revet",
       "8 oz blomkålsris",
@@ -362,29 +362,29 @@
     ],
     "instructions": "1. Sauter blomkålsris i olie med spidskommen og salt til møre. 2. Varm kylling og bland med peberfrugt. 3. Anret i skål med avocado på toppen.",
     "image": "/assets/chicken-cauliflower-bowl.svg",
-  "category": "Frokost"
+    "category": "Frokost"
   },
   {
     "id": 22,
     "title": "Kylling med blomkålsris i skål (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz kogt kyllingebryst, revet",
-      "6 oz blomkÃ¥lsris",
+      "6 oz blomkålsris",
       "2 oz peberfrugt, hakket",
       "1 oz avocado, skåret",
       "0.5 oz olivenolie",
       "0.03 oz spidskommen",
       "0.02 oz salt"
     ],
-    "instructions": "1. Tilbered blomkÃ¥lsris med krydderi. 2. Bland med opvarmet kylling og peberfrugt. 3. Top med avocado og server.",
+    "instructions": "1. Tilbered blomkålsris med krydderi. 2. Bland med opvarmet kylling og peberfrugt. 3. Top med avocado og server.",
     "image": "/assets/chicken-cauliflower-bowl.svg",
-  "category": "Frokost"
+    "category": "Frokost"
   },
   {
     "id": 23,
     "title": "Bøf med ovnbagte rodfrugter (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz sirloin steak",
       "8 oz blandede rodfrugter (gulerod, persillerod, kålroe)",
@@ -399,7 +399,7 @@
   {
     "id": 24,
     "title": "Bøf med ovnbagte rodfrugter (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz sirloin steak",
       "6 oz blandede rodfrugter",
@@ -414,7 +414,7 @@
   {
     "id": 25,
     "title": "Linse- og grøntsagsgryde (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "6 oz tørrede linser (kogt vægt ca. 12 oz)",
       "6 oz gulerødder, hakket",
@@ -428,12 +428,12 @@
     ],
     "instructions": "1. Sauter hvidløg i olie, tilsæt gulerod og selleri til de er bløde. 2. Tilsæt linser og tomater, dæk med vand og simr til linserne er møre (20–30 minutter). 3. Krydr med timian, salt og peber. Server varm.",
     "image": "/assets/lentil-stew.svg",
-  "category": "Aftensmad"
+    "category": "Aftensmad"
   },
   {
     "id": 26,
     "title": "Linse- og grøntsagsgryde (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "4 oz tørrede linser (kogt vægt ca. 8 oz)",
       "4 oz gulerødder, hakket",
@@ -447,12 +447,12 @@
     ],
     "instructions": "1. Sauter grøntsager i olie. 2. Tilsæt linser, tomater og vand; simr til linserne er møre. 3. Krydr og server varm.",
     "image": "/assets/lentil-stew.svg",
-  "category": "Aftensmad"
+    "category": "Aftensmad"
   },
   {
     "id": 27,
     "title": "Kalkunkødboller i tomatsauce (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz hakket kalkun",
       "1 oz revet parmesan",
@@ -471,7 +471,7 @@
   {
     "id": 28,
     "title": "Kalkunkødboller i tomatsauce (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz hakket kalkun",
       "0.5 oz revet parmesan",
@@ -490,7 +490,7 @@
   {
     "id": 29,
     "title": "Bagt kyllingelår med grønkål (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz kyllingelår med ben (med skind)",
       "6 oz grønkål, hakket",
@@ -501,12 +501,12 @@
     ],
     "instructions": "1. Gnid kyllingen med olie, paprika, salt og peber. 2. Bag ved 200°C i 30–35 minutter til 74°C. 3. Sauter grønkål i olie til visnet. 4. Server kylling med grønkål.",
     "image": "/assets/baked-chicken-thighs.svg",
-  "category": "Aftensmad"
+    "category": "Aftensmad"
   },
   {
     "id": 30,
     "title": "Bagt kyllingelår med grønkål (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz kyllingelår med ben (med skind)",
       "4 oz grønkål, hakket",
@@ -517,12 +517,12 @@
     ],
     "instructions": "1. Krydr og bag kylling til gennemstegt. 2. Tilbered grønkål i pande indtil mør. 3. Anret og server.",
     "image": "/assets/baked-chicken-thighs.svg",
-  "category": "Aftensmad"
+    "category": "Aftensmad"
   },
   {
     "id": 31,
     "title": "Quinoa og kikærtesalat (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "6 oz kogt quinoa",
       "6 oz kogte kikærter",
@@ -541,7 +541,7 @@
   {
     "id": 32,
     "title": "Quinoa og kikærtesalat (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "4 oz kogt quinoa",
       "4 oz kogte kikærter",
@@ -560,7 +560,7 @@
   {
     "id": 33,
     "title": "Grøntsagsomelet med avocado (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "4 store æg (ca. 8 oz)",
       "3 oz champignon, skåret",
@@ -578,7 +578,7 @@
   {
     "id": 34,
     "title": "Grøntsagsomelet med avocado (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "3 store æg (ca. 6 oz)",
       "2 oz champignon, skåret",
@@ -596,7 +596,7 @@
   {
     "id": 35,
     "title": "Laks og avocadosalat (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz kogt laks, flosset",
       "6 oz blandede salatblade",
@@ -614,7 +614,7 @@
   {
     "id": 36,
     "title": "Laks og avocadosalat (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz kogt laks, flosset",
       "4 oz blandede salatblade",
@@ -632,7 +632,7 @@
   {
     "id": 37,
     "title": "Oksekødfyldte peberfrugter (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz hakket oksekød (85% lean)",
       "3 store peberfrugter (ca. 18 oz totalt)",
@@ -650,7 +650,7 @@
   {
     "id": 38,
     "title": "Oksekødfyldte peberfrugter (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz hakket oksekød (85% lean)",
       "2 medium peberfrugter (ca. 12 oz totalt)",
@@ -668,7 +668,7 @@
   {
     "id": 39,
     "title": "Grillet portobello- og grøntsagsstak (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "4 store portobello-hatte (ca. 12 oz)",
       "6 oz aubergine, skåret",
@@ -685,7 +685,7 @@
   {
     "id": 40,
     "title": "Grillet portobello- og grøntsagsstak (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "3 medium portobello-hatte (ca. 9 oz)",
       "4 oz aubergine, skåret",
@@ -703,7 +703,7 @@
   {
     "id": 41,
     "title": "Hytteost med bær (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz hytteost (fuldfed eller efter præference)",
       "4 oz blandede bær (jordbær, blåbær, hindbær)",
@@ -717,7 +717,7 @@
   {
     "id": 42,
     "title": "Hytteost med bær (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz hytteost",
       "3 oz blandede bær",
@@ -731,7 +731,7 @@
   {
     "id": 43,
     "title": "Mandelpaneret kylling (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz kyllingebryst, banket tyndt",
       "3 oz mandelmel (til panering)",
@@ -747,7 +747,7 @@
   {
     "id": 44,
     "title": "Mandelpaneret kylling (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz kyllingebryst, banket tyndt",
       "2 oz mandelmel",
@@ -763,7 +763,7 @@
   {
     "id": 45,
     "title": "Blomkåls 'pizza' skål (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz blomkålsris",
       "6 oz kogt italiensk kylling eller kalkun, skåret",
@@ -780,7 +780,7 @@
   {
     "id": 46,
     "title": "Blomkåls 'pizza' skål (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz blomkålsris",
       "4 oz kogt italiensk kylling eller kalkun, skåret",
@@ -797,7 +797,7 @@
   {
     "id": 47,
     "title": "Kalkunburger i salatblade (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "10 oz hakket kalkun formet til to bøffer",
       "4 store salatblade som 'boller'",
@@ -815,7 +815,7 @@
   {
     "id": 48,
     "title": "Kalkunburger i salatblade (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "6 oz hakket kalkun formet til en medium bøf",
       "3 store salatblade",
@@ -833,7 +833,7 @@
   {
     "id": 49,
     "title": "Sprødstegt tun med grønne bønner (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz tunsteak",
       "6 oz grønne bønner",
@@ -850,7 +850,7 @@
   {
     "id": 50,
     "title": "Sprødstegt tun med grønne bønner (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz tunsteak",
       "4 oz grønne bønner",
@@ -867,7 +867,7 @@
   {
     "id": 51,
     "title": "Chiagrød med bær (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "6 oz græsk yoghurt",
       "2 oz chiafrø",
@@ -881,7 +881,7 @@
   {
     "id": 52,
     "title": "Chiagrød med bær (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "4 oz græsk yoghurt",
       "1.5 oz chiafrø",
@@ -895,7 +895,7 @@
   {
     "id": 53,
     "title": "Kyllingesalat med avocado (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "8 oz kogt kylling, skåret",
       "4 oz blandede salatblade",
@@ -910,7 +910,7 @@
   {
     "id": 54,
     "title": "Kyllingesalat med avocado (Kvinde)",
-    "serving_for": "female",
+    "serving_for": "kvinde",
     "ingredients": [
       "5 oz kogt kylling, skåret",
       "3 oz blandede salatblade",
@@ -925,7 +925,7 @@
   {
     "id": 55,
     "title": "Havregrød med kanel og æble (Mand)",
-    "serving_for": "male",
+    "serving_for": "mand",
     "ingredients": [
       "6 oz havregryn kogt i vand",
       "1 oz æble i tern",
@@ -938,14 +938,94 @@
   {
     "id": 56,
     "title": "Havregrød med kanel og æble (Kvinde)",
-    "serving_for": "female",
-    "ingredients": [
-      "4 oz havregryn",
-      "0.5 oz æble i tern",
-      "0.05 oz kanel"
-    ],
+    "serving_for": "kvinde",
+    "ingredients": ["4 oz havregryn", "0.5 oz æble i tern", "0.05 oz kanel"],
     "instructions": "1. Kog havregryn i vand eller mælk indtil blødt. 2. Top med æbletern og et drys kanel.",
     "image": "/assets/oatmeal.svg",
     "category": "Morgenmad"
+  },
+  {
+    "id": 57,
+    "title": "Protein-chiapudding med bær (Mand)",
+    "serving_for": "mand",
+    "ingredients": [
+      "6 oz skyr eller græsk yoghurt",
+      "2 oz chiafrø",
+      "3 oz blandede bær",
+      "1 oz hakkede mandler"
+    ],
+    "instructions": "1. Bland yoghurt og chiafrø, lad trække mindst 20 minutter eller natten over. 2. Top med bær og mandler før servering.",
+    "image": "/assets/chiaporridge.svg",
+    "category": "Morgenmad"
+  },
+  {
+    "id": 58,
+    "title": "Protein-chiapudding med bær (Kvinde)",
+    "serving_for": "kvinde",
+    "ingredients": [
+      "4 oz skyr eller græsk yoghurt",
+      "1.5 oz chiafrø",
+      "2 oz blandede bær",
+      "0.5 oz hakkede mandler"
+    ],
+    "instructions": "1. Bland yoghurt og chiafrø, lad trække. 2. Top med bær og lidt mandler.",
+    "image": "/assets/chiaporridge.svg",
+    "category": "Morgenmad"
+  },
+  {
+    "id": 59,
+    "title": "Ovnbagt laks med grønkål og citron (Mand)",
+    "serving_for": "mand",
+    "ingredients": [
+      "8 oz laks",
+      "6 oz grønkål, hakket",
+      "1 oz olivenolie",
+      "0.2 oz citronsaft",
+      "0.05 oz salt"
+    ],
+    "instructions": "1. Læg laks i ovnfast fad, dryp med olie og citron, krydr. 2. Bag ved 200°C i 12–15 minutter. 3. Sauter grønkål hurtigt og server til.",
+    "image": "/assets/pan-seared-salmon.svg",
+    "category": "Aftensmad"
+  },
+  {
+    "id": 60,
+    "title": "Ovnbagt laks med grønkål og citron (Kvinde)",
+    "serving_for": "kvinde",
+    "ingredients": [
+      "5 oz laks",
+      "4 oz grønkål, hakket",
+      "0.5 oz olivenolie",
+      "0.1 oz citronsaft",
+      "0.03 oz salt"
+    ],
+    "instructions": "1. Krydr og bag laks til færdig. 2. Tilbered grønkål i pande og server sammen.",
+    "image": "/assets/pan-seared-salmon.svg",
+    "category": "Aftensmad"
+  },
+  {
+    "id": 61,
+    "title": "Mørk chokolade og nøddeplatte (Mand)",
+    "serving_for": "mand",
+    "ingredients": [
+      "1.5 oz 85% mørk chokolade",
+      "1 oz hakkede mandler",
+      "1 oz friske bær"
+    ],
+    "instructions": "1. Smelt chokolade og fordel på et lille fad. 2. Drys hakkede mandler og top med bær. 3. Lad størkne og server i portioner.",
+    "image": "/assets/cottage-cheese-berries.svg",
+    "category": "Dessert"
+  },
+  {
+    "id": 62,
+    "title": "Mørk chokolade og nøddeplatte (Kvinde)",
+    "serving_for": "kvinde",
+    "ingredients": [
+      "1 oz 85% mørk chokolade",
+      "0.5 oz hakkede mandler",
+      "0.5 oz friske bær"
+    ],
+    "instructions": "1. Smelt chokolade, top med nødder og bær. 2. Del i små portioner og server.",
+    "image": "/assets/cottage-cheese-berries.svg",
+    "category": "Dessert"
   }
 ]
