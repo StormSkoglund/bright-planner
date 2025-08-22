@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="bg-white border-b border-gray-200 p-4 flex flex-col items-start gap-2">
+      <h1 className="text-left text-green-600 font-bold text-xl">
+        BrightPlanner
+      </h1>
       <nav>
         <Link to="/" className="mr-4 text-blue-600 hover:underline">
           Hjem
@@ -12,7 +15,6 @@ export default function Header() {
           Om
         </Link>
       </nav>
-      <h1 className="text-2xl font-bold">Dagens Opskrifter</h1>
     </header>
   );
 }
