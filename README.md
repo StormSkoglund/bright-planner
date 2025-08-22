@@ -1,69 +1,72 @@
-# React + TypeScript + Vite
+# BrightPlanner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small Vite + React + TypeScript app for recipe planning and quick static publishing.
 
-Currently, two official plugins are available:
+This README covers local development, building, and deploying to GitHub Pages using the repository's workflow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick summary
+- Dev: fast HMR with Vite
+- Build: output to `dist/`
+- Deploy: workflow builds and publishes `dist/` to the `gh-pages` branch
 
-## Expanding the ESLint configuration
+## Requirements
+- Node.js 20.x (CI and Vite require Node 20+) — install via nvm or your OS package manager
+- npm (bundled with Node)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting started (local development)
+1. Install dependencies:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Start dev server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+3. Open http://localhost:5173 (or the URL printed by Vite).
+
+## Build for production
+
+```bash
+npm run build
+```
+
+The build output is written to `dist/`.
+
+## Deploy (GitHub Actions)
+- This repository includes a workflow that builds the site, uploads an artifact, then publishes the site by pushing to `gh-pages`.
+- Triggering the workflow:
+  - Push to one of the watched branches (configured: `main`/`master` in the workflow). Or trigger a manual run if `workflow_dispatch` is enabled.
+  - The build creates an artifact named `github-pages` and the deploy job publishes that artifact to the `gh-pages` branch.
+
+## Force a rebuild
+- Re-run the workflow from the Actions UI, or push an empty commit:
+
+```bash
+git commit --allow-empty -m "chore: force rebuild"
+git push
+```
+
+## Enabling GitHub Pages (Settings)
+- For the current workflow you should set Pages to use the `gh-pages` branch and folder `/` (root). Steps:
+  1. Go to your repository → Settings → Pages
+  2. Select `gh-pages` as the branch and `/` as the folder, then Save
+
+## Troubleshooting
+- `configure-pages` 404 / "Get Pages site failed": make sure Pages is enabled in Settings first. If your organization blocks programmatic enablement you must have an admin enable Pages.
+- Vite / Node warnings in Actions: the workflow uses Node 20.x; ensure your local Node matches if you see different behavior locally.
+- Artifact upload/download errors: CI uses `actions/upload-pages-artifact@v3` / `actions/download-artifact@v3` and then pushes to `gh-pages`. If deploy fails, open the Actions run, copy the failing step log, and paste here.
+
+## Contributing
+- Create a branch, implement changes, open a pull request. Maintain code style and keep changes small and focused.
+
+## License
+- Add your preferred license file (e.g., `LICENSE`) if you intend to publish this repository.
+
+## More help
+- If a deploy fails, paste the exact Actions log for the failing step and I’ll help diagnose it.
+
+Enjoy!
