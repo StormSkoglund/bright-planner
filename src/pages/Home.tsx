@@ -36,7 +36,9 @@ export default function Home() {
   const filtered = useMemo(
     () =>
       recipes
-        .filter((r) => r.title.toLowerCase().includes(query.trim().toLowerCase()))
+        .filter((r) =>
+          r.title.toLowerCase().includes(query.trim().toLowerCase())
+        )
         .filter((r) => (category ? r.category === category : true)),
     [recipes, query, category]
   );
