@@ -40,9 +40,27 @@ jobs:
           name: github-pages
           path: ./artifact
 
+      - name: Extract artifact and list files (debug)
+        run: |
+          echo "Contents of ./artifact before extraction:";
+          ls -la ./artifact || true;
+          # If the artifact is a zip or tar, extract into ./artifact/content
+          if ls ./artifact/*.zip 1> /dev/null 2>&1; then
+            unzip -q ./artifact/*.zip -d ./artifact/content || true
+          elif ls ./artifact/*.tar 1> /dev/null 2>&1; then
+            mkdir -p ./artifact/content && tar -xf ./artifact/*.tar -C ./artifact/content || true
+          else
+            # Some upload actions create a single file named artifact.tar — try to extract it
+            if [ -f ./artifact/artifact.tar ]; then
+              mkdir -p ./artifact/content && tar -xf ./artifact/artifact.tar -C ./artifact/content || true
+            fi
+          fi
+          echo "Contents of ./artifact/content after extraction:";
+          ls -la ./artifact/content || true
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./artifact
+          publish_dir: ./artifact/content
           publish_branch: gh-pages
