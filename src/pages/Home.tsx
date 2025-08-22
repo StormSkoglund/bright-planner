@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useRecipes } from "../data/useRecipes";
+import type { Recipe } from "../data/useRecipes";
+import pickRandomByCategory from "../utils/pickRandom";
 import RecipeCard from "../components/RecipeCard";
 import { Link } from "react-router-dom";
 
@@ -14,25 +16,15 @@ export default function Home() {
 
   // suggestion state and helper must be declared before any early return
   const [suggestions, setSuggestions] = useState<{
-    mand?: (typeof recipes)[number];
-    kvinde?: (typeof recipes)[number];
+    mand?: Recipe;
+    kvinde?: Recipe;
     category?: string;
   } | null>(null);
 
+  const categoryOptions = ["Morgenmad", "Frokost", "Aftensmad", "Dessert"];
+
   function pickRandomFor(categoryKey: string) {
-    const mands = recipes.filter(
-      (r) => r.category === categoryKey && r.serving_for === "mand"
-    );
-    const kvindes = recipes.filter(
-      (r) => r.category === categoryKey && r.serving_for === "kvinde"
-    );
-
-    const pick = <T,>(arr: T[]) =>
-      arr.length ? arr[Math.floor(Math.random() * arr.length)] : undefined;
-
-    const mand = pick(mands);
-    const kvinde = pick(kvindes);
-
+    const { mand, kvinde } = pickRandomByCategory(recipes, categoryKey);
     setSuggestions({ mand, kvinde, category: categoryKey });
   }
 
@@ -41,12 +33,16 @@ export default function Home() {
     else setSearchParams({});
   }, [category, setSearchParams]);
 
+  const filtered = useMemo(
+    () =>
+      recipes
+        .filter((r) => r.title.toLowerCase().includes(query.trim().toLowerCase()))
+        .filter((r) => (category ? r.category === category : true)),
+    [recipes, query, category]
+  );
+
   if (loading) return <p className="text-gray-500">Indlæser opskrifter...</p>;
   if (error) return <p className="text-red-500">Fejl: {error}</p>;
-
-  const filtered = recipes
-    .filter((r) => r.title.toLowerCase().includes(query.trim().toLowerCase()))
-    .filter((r) => (category ? r.category === category : true));
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -86,46 +82,19 @@ export default function Home() {
           >
             Alle
           </button>
-          <button
-            onClick={() => setCategory("Morgenmad")}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
-              category === "Morgenmad"
-                ? "bg-accent text-white shadow-md"
-                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
-            }`}
-          >
-            Morgenmad
-          </button>
-          <button
-            onClick={() => setCategory("Frokost")}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
-              category === "Frokost"
-                ? "bg-accent text-white shadow-md"
-                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
-            }`}
-          >
-            Frokost
-          </button>
-          <button
-            onClick={() => setCategory("Aftensmad")}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
-              category === "Aftensmad"
-                ? "bg-accent text-white shadow-md"
-                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
-            }`}
-          >
-            Aftensmad
-          </button>
-          <button
-            onClick={() => setCategory("Dessert")}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
-              category === "Dessert"
-                ? "bg-accent text-white shadow-md"
-                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
-            }`}
-          >
-            Dessert
-          </button>
+          {categoryOptions.map((opt) => (
+            <button
+              key={opt}
+              onClick={() => setCategory(opt)}
+              className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+                category === opt
+                  ? "bg-accent text-white shadow-md"
+                  : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+              }`}
+            >
+              {opt}
+            </button>
+          ))}
         </div>
       </section>
 
