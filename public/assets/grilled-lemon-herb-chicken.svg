@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
-  <rect width="100%" height="100%" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  
   <!-- plate -->
   <circle cx="200" cy="140" r="110" fill="#fafafa" stroke="#e6e6e6"/>
   <!-- chicken breast -->

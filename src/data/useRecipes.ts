@@ -6,6 +6,8 @@ export interface Recipe {
   ingredients: string[];
   instructions: string;
   image: string;
+  serving_for?: string;
+  category?: string;
 }
 
 export function useRecipes() {

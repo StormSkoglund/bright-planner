@@ -1,0 +1,20 @@
+/* Minimal stylesheet for RecipeCard component - kept intentionally small.
+   The project mainly uses Tailwind utility classes; include a small helper
+   in case the component relies on this file being present. */
+
+.recipe-card {
+  display: block;
+}
+
+.recipe-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* small helpers for focus and spacing when not using only utilities */
+.recipe-card:focus,
+.recipe-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.15);
+}

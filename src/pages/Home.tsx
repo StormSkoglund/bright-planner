@@ -1,80 +1,284 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useRecipes } from "../data/useRecipes";
 import RecipeCard from "../components/RecipeCard";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { recipes, loading, error } = useRecipes();
   const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [category, setCategory] = useState<string | null>(
+    searchParams.get("category") || null
+  );
+
+  // suggestion state and helper must be declared before any early return
+  const [suggestions, setSuggestions] = useState<{
+    mand?: (typeof recipes)[number];
+    kvinde?: (typeof recipes)[number];
+    category?: string;
+  } | null>(null);
+
+  function pickRandomFor(categoryKey: string) {
+    const mands = recipes.filter(
+      (r) => r.category === categoryKey && r.serving_for === "mand"
+    );
+    const kvindes = recipes.filter(
+      (r) => r.category === categoryKey && r.serving_for === "kvinde"
+    );
+
+    const pick = <T,>(arr: T[]) =>
+      arr.length ? arr[Math.floor(Math.random() * arr.length)] : undefined;
+
+    const mand = pick(mands);
+    const kvinde = pick(kvindes);
+
+    setSuggestions({ mand, kvinde, category: categoryKey });
+  }
+
+  useEffect(() => {
+    if (category) setSearchParams({ category });
+    else setSearchParams({});
+  }, [category, setSearchParams]);
 
   if (loading) return <p className="text-gray-500">Indlæser opskrifter...</p>;
   if (error) return <p className="text-red-500">Fejl: {error}</p>;
 
-  const filtered = recipes.filter((r) =>
-    r.title.toLowerCase().includes(query.trim().toLowerCase())
-  );
+  const filtered = recipes
+    .filter((r) => r.title.toLowerCase().includes(query.trim().toLowerCase()))
+    .filter((r) => (category ? r.category === category : true));
 
   return (
-    <main className="max-w-7xl mx-auto p-6">
-      <section className="bg-gradient-to-r from-amber-50 to-white rounded-lg p-8 mb-8 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h1 className="text-3xl font-extrabold text-gray-800 mb-2">
-              BrightPlanner Opskrifter
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-8 mb-10 shadow-sm">
+        <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6">
+          <div className="text-center md:text-left">
+            <h1 className="text-[clamp(1.25rem,6vw,2.5rem)] md:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-neutral-darkest mb-2 logo-font">
+              BrightPlanner
             </h1>
-            <p className="text-gray-600">
-              Find hurtige, sunde og lækre opskrifter til at planlægge din uge.
+            <p className="text-lg text-neutral-dark">
+              Find sunde og lækre opskrifter.
             </p>
           </div>
 
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 mx-auto md:mx-0">
             <label className="relative block">
               <span className="sr-only">Søg opskrifter</span>
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-200 rounded-md py-2 pl-3 pr-10 shadow-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-200"
-                placeholder="Søg opskrifter efter navn..."
+                className="placeholder:text-neutral block bg-white w-full border border-neutral-light rounded-md py-3 px-4 pr-10 shadow-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent-light"
+                placeholder="Søg efter opskrifter..."
                 type="text"
               />
             </label>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          <button className="px-3 py-1 text-sm rounded-full bg-amber-100 text-amber-800">
+        <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
+          <button
+            onClick={() => setCategory(null)}
+            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+              category === null
+                ? "bg-accent text-white shadow-md"
+                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+            }`}
+          >
             Alle
           </button>
-          <button className="px-3 py-1 text-sm rounded-full bg-amber-50 text-amber-700">
+          <button
+            onClick={() => setCategory("Morgenmad")}
+            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+              category === "Morgenmad"
+                ? "bg-accent text-white shadow-md"
+                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+            }`}
+          >
             Morgenmad
           </button>
-          <button className="px-3 py-1 text-sm rounded-full bg-amber-50 text-amber-700">
+          <button
+            onClick={() => setCategory("Frokost")}
+            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+              category === "Frokost"
+                ? "bg-accent text-white shadow-md"
+                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+            }`}
+          >
             Frokost
           </button>
-          <button className="px-3 py-1 text-sm rounded-full bg-amber-50 text-amber-700">
+          <button
+            onClick={() => setCategory("Aftensmad")}
+            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+              category === "Aftensmad"
+                ? "bg-accent text-white shadow-md"
+                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+            }`}
+          >
             Aftensmad
           </button>
-          <button className="px-3 py-1 text-sm rounded-full bg-amber-50 text-amber-700">
+          <button
+            onClick={() => setCategory("Dessert")}
+            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+              category === "Dessert"
+                ? "bg-accent text-white shadow-md"
+                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+            }`}
+          >
             Dessert
           </button>
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Opskrifter</h2>
+        <div className="mb-8 text-center">
+          <h2 className="text-xl md:text-2xl font-bold text-neutral-darkest">
+            Måltidsinspiration
+          </h2>
+          <p className="text-neutral-dark">
+            Ikke sikker på, hvad du skal spise? Prøv et tilfældigt forslag!
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <button
+            onClick={() => pickRandomFor("Morgenmad")}
+            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Morgenmad
+          </button>
+          <button
+            onClick={() => pickRandomFor("Frokost")}
+            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Frokost
+          </button>
+          <button
+            onClick={() => pickRandomFor("Aftensmad")}
+            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Aftensmad
+          </button>
+          <button
+            onClick={() => pickRandomFor("Dessert")}
+            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Dessert
+          </button>
+        </div>
+      </section>
 
-        {filtered.length === 0 ? (
-          <div className="rounded-md p-6 bg-white border border-slate-100 shadow-sm">
-            <p className="text-gray-600">
-              Ingen opskrifter fundet for "{query}".
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
+      <section className="mt-12">
+        {suggestions && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-neutral-darkest/40">
+            <div
+              className="absolute inset-0"
+              onClick={() => setSuggestions(null)}
+            />
+
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="suggestion-title"
+              className="relative bg-white rounded-xl shadow-2xl max-w-3xl w-full p-8 mx-auto"
+            >
+              <h3
+                id="suggestion-title"
+                className="text-2xl font-bold text-center mb-6"
+              >
+                Forslag til {suggestions.category}
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="bg-brand-light rounded-lg p-4 flex flex-col items-center text-center">
+                  {suggestions.mand ? (
+                    <Link
+                      to={`/recipe/${suggestions.mand.id}`}
+                      className="flex flex-col items-center gap-4 w-full"
+                    >
+                      <img
+                        src={suggestions.mand.image}
+                        alt=""
+                        className="w-full h-40 object-cover rounded-md"
+                      />
+                      <div className="flex-1">
+                        <div className="text-lg font-semibold text-brand-dark">
+                          Mand
+                        </div>
+                        <div className="text-base text-neutral-darkest">
+                          {suggestions.mand.title}
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="h-full flex items-center justify-center text-neutral-dark">
+                      Mand: ingen opskrift
+                    </div>
+                  )}
+                </div>
+
+                <div className="bg-accent-light rounded-lg p-4 flex flex-col items-center text-center">
+                  {suggestions.kvinde ? (
+                    <Link
+                      to={`/recipe/${suggestions.kvinde.id}`}
+                      className="flex flex-col items-center gap-4 w-full"
+                    >
+                      <img
+                        src={suggestions.kvinde.image}
+                        alt=""
+                        className="w-full h-40 object-cover rounded-md"
+                      />
+                      <div className="flex-1">
+                        <div className="text-lg font-semibold text-accent-dark">
+                          Kvinde
+                        </div>
+                        <div className="text-base text-neutral-darkest">
+                          {suggestions.kvinde.title}
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="h-full flex items-center justify-center text-neutral-dark">
+                      Kvinde: ingen opskrift
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setSuggestions(null)}
+                  className="px-6 py-2 rounded-full bg-neutral-light hover:bg-neutral text-neutral-darkest font-semibold"
+                >
+                  Luk
+                </button>
+              </div>
+            </div>
           </div>
         )}
+
+        <div className="mt-8">
+          {filtered.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-xl text-neutral-dark mb-4">
+                Ingen opskrifter fundet for "{query}".
+              </p>
+              <button
+                onClick={() => {
+                  setQuery("");
+                  setCategory(null);
+                }}
+                className="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark shadow-md"
+              >
+                Nulstil søgning
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filtered.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
+            </div>
+          )}
+        </div>
       </section>
     </main>
   );
