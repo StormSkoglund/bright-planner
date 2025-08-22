@@ -3,9 +3,33 @@ import pickRandomByCategory from "./pickRandom";
 import type { Recipe } from "../data/useRecipes";
 
 const mockRecipes: Recipe[] = [
-  { id: 1, title: "A", ingredients: [], instructions: "", image: "", serving_for: "mand", category: "Aftensmad" },
-  { id: 2, title: "B", ingredients: [], instructions: "", image: "", serving_for: "kvinde", category: "Aftensmad" },
-  { id: 3, title: "C", ingredients: [], instructions: "", image: "", serving_for: "mand", category: "Morgenmad" },
+  {
+    id: 1,
+    title: "A",
+    ingredients: [],
+    instructions: "",
+    image: "",
+    serving_for: "mand",
+    category: "Aftensmad",
+  },
+  {
+    id: 2,
+    title: "B",
+    ingredients: [],
+    instructions: "",
+    image: "",
+    serving_for: "kvinde",
+    category: "Aftensmad",
+  },
+  {
+    id: 3,
+    title: "C",
+    ingredients: [],
+    instructions: "",
+    image: "",
+    serving_for: "mand",
+    category: "Morgenmad",
+  },
 ];
 
 describe("pickRandomByCategory", () => {

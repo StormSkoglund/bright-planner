@@ -14,7 +14,8 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
     // prevent card link navigation when clicking copy
     e.preventDefault();
     e.stopPropagation();
-    const text = `Ingredienser til ${recipe.title}:\n` +
+    const text =
+      `Ingredienser til ${recipe.title}:\n` +
       recipe.ingredients.map((i) => `- ${i}`).join("\n");
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -59,11 +60,27 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             aria-label={`Kopier ingredienser for ${recipe.title}`}
           >
             {copied ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-green-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                  clipRule="evenodd"
+                />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-neutral-dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-neutral-dark"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden
+              >
                 <path d="M8 2a2 2 0 00-2 2v1H5a2 2 0 00-2 2v7a2 2 0 002 2h7a2 2 0 002-2v-1h1a2 2 0 002-2V8a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H8zM7 5a1 1 0 011-1h4a1 1 0 011 1v1H7V5z" />
               </svg>
             )}

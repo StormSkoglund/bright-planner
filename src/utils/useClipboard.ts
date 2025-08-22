@@ -4,4 +4,4 @@
 // - default export useClipboard(options) -> { copied, copy }
 
 // useClipboard hook removed — kept placeholder to ease revert operations.
-export {}; 
+export {};
