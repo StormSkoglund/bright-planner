@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <ellipse cx="200" cy="150" rx="120" ry="60" fill="#fbf2ef" stroke="#eee"/>
+  <!-- meatballs -->
+  <g fill="#d96a45" stroke="#b24f36" stroke-width="1">
+    <circle cx="170" cy="140" r="14"/>
+    <circle cx="205" cy="145" r="14"/>
+    <circle cx="240" cy="138" r="14"/>
+  </g>
+  <!-- sauce gloss -->
+  <path d="M160 132 q45 25 90 10" fill="none" stroke="#b33a2b" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle">Turkey Meatballs with Tomato Sauce</text>
+</svg>
