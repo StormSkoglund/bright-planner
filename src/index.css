@@ -12,6 +12,41 @@ body,
   height: 100%;
 }
 
+/* Reduce horizontal padding on small screens so content can use more width */
+/* Keep #root full-bleed on small screens; main controls the inner spacing. */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0; /* Let page-level containers control spacing */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding: 2rem; /* keep larger outer padding on tablet+ */
+  }
+}
+
+/* Reusable page container utility to keep horizontal gutters consistent */
+.page-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 1rem; /* sm:px-4 equivalent */
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-left: 1.5rem; /* md:px-6 equivalent */
+    padding-right: 1.5rem;
+  }
+}
+
 body {
   @apply font-sans bg-neutral-lightest text-neutral-darkest;
   -webkit-font-smoothing: antialiased;

@@ -47,14 +47,14 @@ export default function Home() {
   if (error) return <p className="text-red-500">Fejl: {error}</p>;
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-8 mb-10 shadow-sm">
+  <main className="max-w-7xl mx-auto page-container py-8">
+  <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-4 md:p-8 mb-10 shadow-sm">
         <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6">
           <div className="text-center md:text-left">
             <h1 className="text-[clamp(1.25rem,6vw,2.5rem)] md:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-neutral-darkest mb-2 logo-font">
               BrightPlanner
             </h1>
-            <p className="text-lg text-neutral-dark">
+            <p className="text-base md:text-lg text-neutral-dark">
               Find sunde og lækre opskrifter.
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="placeholder:text-neutral block bg-white w-full border border-neutral-light rounded-md py-3 px-4 pr-10 shadow-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent-light"
+                className="placeholder:text-neutral text-sm md:text-base block bg-white w-full border border-neutral-light rounded-md py-2 px-3 md:py-3 md:px-4 pr-10 shadow-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent-light"
                 placeholder="Søg efter opskrifter..."
                 type="text"
               />
@@ -149,7 +149,7 @@ export default function Home() {
               role="dialog"
               aria-modal="true"
               aria-labelledby="suggestion-title"
-              className="relative bg-white rounded-xl shadow-2xl max-w-3xl w-full p-8 mx-auto"
+              className="relative bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 mx-auto"
             >
               <h3
                 id="suggestion-title"
