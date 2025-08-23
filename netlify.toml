@@ -10,4 +10,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
+  # Do not force rewrite all requests — allow Netlify to serve existing static assets
