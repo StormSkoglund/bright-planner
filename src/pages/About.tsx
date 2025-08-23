@@ -1,6 +1,6 @@
 export default function About() {
   return (
-  <main className="max-w-xl mx-auto page-container py-8">
+    <main className="max-w-xl mx-auto page-container py-8">
       <h2 className="text-xl font-bold mb-4">Om Bright Planner</h2>
       <p className="mb-1">
         Denne app er under udvikling! Opskrifterne på denne side bygger på

@@ -25,14 +25,17 @@ export default function WeekPlannerPrint() {
     return () => clearTimeout(t);
   }, []);
 
-  if (!week) return (
-    <main className="page-container py-8 max-w-7xl mx-auto">
-      <p className="text-neutral">Ingen ugeplan fundet.</p>
-      <div className="mt-4">
-        <Link to="/week-planner" className="text-blue-600 hover:underline">Tilbage</Link>
-      </div>
-    </main>
-  );
+  if (!week)
+    return (
+      <main className="page-container py-8 max-w-7xl mx-auto">
+        <p className="text-neutral">Ingen ugeplan fundet.</p>
+        <div className="mt-4">
+          <Link to="/week-planner" className="text-blue-600 hover:underline">
+            Tilbage
+          </Link>
+        </div>
+      </main>
+    );
 
   const DAYS = Object.keys(week);
 
