@@ -40,6 +40,14 @@ body,
   }
 }
 
+/* Make the page container slightly wider on the smallest screens */
+@media (max-width: 639px) {
+  .page-container {
+  padding-left: 0;
+  padding-right: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .page-container {
     padding-left: 1.5rem; /* md:px-6 equivalent */
@@ -72,3 +80,51 @@ h6 {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* Shopping list styles: remove bullet on small screens and use grid on sm+ */
+.shopping-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 640px) {
+  .shopping-list {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+/* Subtle site-wide background artwork (non-interactive) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/bp.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* avoid upscaling the artwork on large viewports to reduce blur
+    - cap size to the artwork's approximate natural width or viewport, whichever is smaller */
+  background-size: min(1200px, 90vw) auto;
+  /* rendering hint (may help slightly in some browsers) */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  opacity: 0.06; /* slightly more subtle when covering */
+  z-index: 0;
+}
+
+/* Ensure main content sits above the background */
+#root, #root > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  body::before {
+  background-position: center center;
+  /* allow smaller cap on phones so artwork doesn't dominate but keeps crispness */
+  background-size: min(900px, 92vw) auto;
+  opacity: 0.05;
+  }
+}
+

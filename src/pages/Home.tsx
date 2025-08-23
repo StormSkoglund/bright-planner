@@ -47,8 +47,8 @@ export default function Home() {
   if (error) return <p className="text-red-500">Fejl: {error}</p>;
 
   return (
-  <main className="max-w-7xl mx-auto page-container py-8">
-  <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-4 md:p-8 mb-10 shadow-sm">
+    <main className="max-w-7xl mx-auto page-container py-8">
+      <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-4 md:p-8 mb-10 shadow-sm">
         <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6">
           <div className="text-center md:text-left">
             <h1 className="text-[clamp(1.25rem,6vw,2.5rem)] md:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-neutral-darkest mb-2 logo-font">

@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import { useRecipes } from "../data/useRecipes";
 import type { Recipe } from "../data/useRecipes";
+import ShoppingList from "../components/ShoppingList";
 
 type MealKey = "breakfast" | "lunch" | "dinner";
-type DayKey = "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday";
+type DayKey =
+  | "monday"
+  | "tuesday"
+  | "wednesday"
+  | "thursday"
+  | "friday"
+  | "saturday"
+  | "sunday";
 
 const DAYS: DayKey[] = [
   "monday",
@@ -41,6 +49,97 @@ function pickRandom(recipes: Recipe[]) {
   return recipes[i];
 }
 
+type Classified = Recipe & { allowedMeals: MealKey[]; tags?: string[] };
+
+function classify(recipes: Recipe[]): Classified[] {
+  return recipes.map((r) => {
+    const title = (r.title || "").toLowerCase();
+    const image = (r.image || "").toLowerCase();
+    const category = (r.category || "").toLowerCase();
+
+    const tags: string[] = [];
+
+    // Detect grains/oat-based recipes (simple heuristics)
+    const grainKeywords = [
+      "oat",
+      "havre",
+      "grød",
+      "porridge",
+      "oatmeal",
+      "chiaporridge",
+    ];
+    if (grainKeywords.some((k) => title.includes(k) || image.includes(k)))
+      tags.push("grain");
+
+    // Map category to allowed meals (Danish categories)
+    const allowedMeals: MealKey[] = [];
+    if (
+      category.includes("morgen") ||
+      category.includes("morgenmad") ||
+      title.includes("morgen")
+    ) {
+      allowedMeals.push("breakfast");
+    }
+    if (
+      category.includes("frokost") ||
+      category.includes("lunch") ||
+      title.includes("frokost")
+    ) {
+      allowedMeals.push("lunch");
+    }
+    if (
+      category.includes("aften") ||
+      category.includes("aftensmad") ||
+      title.includes("aften")
+    ) {
+      allowedMeals.push("dinner");
+    }
+
+    // If category didn't map, fall back to reasonable defaults: treat salads/plates as lunch/dinner
+    if (allowedMeals.length === 0) {
+      const lunchKeywords = [
+        "salat",
+        "wrap",
+        "bowl",
+        "fisk",
+        "kylling",
+        "tuna",
+        "tun",
+        "rejer",
+        "shrimp",
+        "laks",
+        "salmon",
+        "pork",
+        "svin",
+        "bøf",
+        "steg",
+      ];
+      if (lunchKeywords.some((k) => title.includes(k) || image.includes(k)))
+        allowedMeals.push("lunch");
+      const dinnerKeywords = [
+        "stege",
+        "ovn",
+        "bagt",
+        "grillet",
+        "pan",
+        "wok",
+        "stew",
+        "gryde",
+        "bøf",
+        "kød",
+      ];
+      if (dinnerKeywords.some((k) => title.includes(k) || image.includes(k)))
+        allowedMeals.push("dinner");
+    }
+
+    // As a last resort, allow all meals
+    if (allowedMeals.length === 0)
+      allowedMeals.push("breakfast", "lunch", "dinner");
+
+    return { ...r, allowedMeals, tags };
+  });
+}
+
 export default function WeekPlanner() {
   const { recipes, loading } = useRecipes();
   const [week, setWeek] = useState<WeekPlan>(() => {
@@ -57,6 +156,12 @@ export default function WeekPlanner() {
     // save automatically whenever week changes
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(week));
+      // notify other windows/components
+      try {
+        window.dispatchEvent(new CustomEvent("weekplan:changed"));
+      } catch {
+        // ignore if CustomEvent not supported
+      }
     } catch {
       // ignore
     }
@@ -64,14 +169,24 @@ export default function WeekPlanner() {
 
   function generateNewWeek() {
     if (!recipes || recipes.length === 0) return;
+    const classified = classify(recipes);
     setWeek((prev) => {
       const next = { ...prev } as WeekPlan;
       for (const d of DAYS) {
         for (const m of MEALS) {
           const slot = prev[d][m];
           if (slot.locked) continue;
-          const r = pickRandom(recipes);
-          next[d] = { ...next[d], [m]: { id: r ? r.id : null, locked: false } } as DayPlan;
+          // filter by allowed meals
+          let pool = classified.filter((c) => c.allowedMeals.includes(m));
+          // if not breakfast, exclude grain-tagged recipes
+          if (m !== "breakfast")
+            pool = pool.filter((c) => !(c.tags || []).includes("grain"));
+          if (pool.length === 0) pool = classified; // fallback
+          const pick = pickRandom(pool) as Classified | null;
+          next[d] = {
+            ...next[d],
+            [m]: { id: pick ? pick.id : null, locked: false },
+          } as DayPlan;
         }
       }
       return next;
@@ -127,59 +242,90 @@ export default function WeekPlanner() {
         <p className="text-gray-500">Indlæser opskrifter…</p>
       ) : (
         <>
-          <div className="hidden lg:block mb-2 text-sm font-semibold">Dag / Måltid</div>
+          <div className="hidden lg:block mb-2 text-sm font-semibold">
+            Dag / Måltid
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {DAYS.map((day) => (
-            <div key={day} className="bg-white rounded-lg p-4 shadow-sm">
-              <div className="font-semibold capitalize mb-4">{day}</div>
-              <div className="space-y-3">
-                {MEALS.map((meal) => {
-                  const slot = week[day as DayKey][meal as MealKey];
-                  const recipe = getRecipeById(slot.id);
-                  return (
-                    <div key={meal} className="flex items-center justify-between gap-3">
-                      <div>
-                        <div className="text-sm font-medium capitalize">{meal}</div>
-                        <div className="text-sm text-neutral-dark">
-                          {recipe ? recipe.title : <span className="text-neutral">—</span>}
+            {DAYS.map((day) => (
+              <div key={day} className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="font-semibold capitalize mb-4">{day}</div>
+                <div className="space-y-3">
+                  {MEALS.map((meal) => {
+                    const slot = week[day as DayKey][meal as MealKey];
+                    const recipe = getRecipeById(slot.id);
+                    return (
+                      <div
+                        key={meal}
+                        className="flex items-center justify-between gap-3"
+                      >
+                        <div>
+                          <div className="text-sm font-medium capitalize">
+                            {meal}
+                          </div>
+                          <div className="text-sm text-neutral-dark">
+                            {recipe ? (
+                              recipe.title
+                            ) : (
+                              <span className="text-neutral">—</span>
+                            )}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() =>
+                              toggleLock(day as DayKey, meal as MealKey)
+                            }
+                            className={`px-2 py-1 rounded-md border text-sm ${
+                              slot.locked
+                                ? "bg-accent text-white border-accent"
+                                : "bg-white text-neutral-dark border-neutral-200"
+                            }`}
+                            title={slot.locked ? "Lås" : "Lås op"}
+                          >
+                            {slot.locked ? "🔒" : "🔓"}
+                          </button>
+                          <button
+                            onClick={() => {
+                              // quick replace this slot with a random recipe (respect classification)
+                              if (!recipes || recipes.length === 0) return;
+                              const classified = classify(recipes);
+                              let pool = classified.filter((c) =>
+                                c.allowedMeals.includes(meal as MealKey)
+                              );
+                              if (meal !== "breakfast")
+                                pool = pool.filter(
+                                  (c) => !(c.tags || []).includes("grain")
+                                );
+                              if (pool.length === 0) pool = classified;
+                              const r = pickRandom(pool) as Classified | null;
+                              setWeek((prev) => {
+                                const next = { ...prev } as WeekPlan;
+                                next[day as DayKey] = {
+                                  ...next[day as DayKey],
+                                  [meal]: {
+                                    id: r ? r.id : null,
+                                    locked: false,
+                                  },
+                                } as DayPlan;
+                                return next;
+                              });
+                            }}
+                            className="px-2 py-1 rounded-md border bg-white text-neutral-dark border-neutral-200 text-sm"
+                            title="Erstat med tilfældig opskrift"
+                          >
+                            🔀
+                          </button>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => toggleLock(day as DayKey, meal as MealKey)}
-                          className={`px-2 py-1 rounded-md border text-sm ${
-                            slot.locked ? "bg-accent text-white border-accent" : "bg-white text-neutral-dark border-neutral-200"
-                          }`}
-                          title={slot.locked ? "Lås" : "Lås op"}
-                        >
-                          {slot.locked ? "🔒" : "🔓"}
-                        </button>
-                        <button
-                          onClick={() => {
-                            // quick replace this slot with a random recipe
-                            if (!recipes || recipes.length === 0) return;
-                            const r = pickRandom(recipes);
-                            setWeek((prev) => {
-                              const next = { ...prev } as WeekPlan;
-                              next[day as DayKey] = { ...next[day as DayKey], [meal]: { id: r ? r.id : null, locked: false } } as DayPlan;
-                              return next;
-                            });
-                          }}
-                          className="px-2 py-1 rounded-md border bg-white text-neutral-dark border-neutral-200 text-sm"
-                          title="Erstat med tilfældig opskrift"
-                        >
-                          🔀
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </>
       )}
+      <ShoppingList />
     </main>
   );
 }

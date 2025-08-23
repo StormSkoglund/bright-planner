@@ -57,7 +57,8 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             onClick={copyIngredients}
             title={copied ? "Kopieret" : "Kopier ingredienser"}
             className="absolute top-2 right-2 md:top-3 md:right-3 z-10 inline-flex items-center justify-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-white/80 hover:bg-white shadow-sm focus:outline-none"
-            aria-label={`Kopier ingredienser for ${recipe.title}`}>
+            aria-label={`Kopier ingredienser for ${recipe.title}`}
+          >
             {copied ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
