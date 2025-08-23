@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import RecipeDetail from "./pages/RecipeDetail";
 import About from "./pages/About";
+import WeekPlanner from "./pages/WeekPlanner";
+import WeekPlannerPrint from "./pages/WeekPlannerPrint";
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/week-planner" element={<WeekPlanner />} />
+          <Route path="/week-planner/print" element={<WeekPlannerPrint />} />
         </Routes>
       </main>
     </div>

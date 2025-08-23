@@ -10,6 +10,10 @@ This README covers local development, building, and deploying to GitHub Pages us
 - Build: output to `dist/`
 - Deploy: workflow builds and publishes `dist/` to the `gh-pages` branch
 
+## Disclaimer
+
+This project was built with vibe-coding but supervised by the author :)
+
 ## Requirements
 
 - Node.js 20.x (CI and Vite require Node 20+) — install via nvm or your OS package manager
