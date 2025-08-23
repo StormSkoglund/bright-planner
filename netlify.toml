@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build"
+  # Install dependencies including devDependencies so `tsc` (from devDependencies) is available
+  command = "npm ci --include=dev && npm run build"
   publish = "dist"
 
 [context.production.environment]
