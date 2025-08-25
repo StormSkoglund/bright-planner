@@ -61,6 +61,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  /* slight larger default spacing for breathing room */
+  padding-block: 1rem;
+}
+
 h1,
 h2,
 h3,

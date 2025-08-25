@@ -40,7 +40,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <Link
       to={`/recipe/${recipe.id}`}
-      className="group w-full block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+      className="group w-full block rounded-2xl overflow-hidden shadow-soft hover:shadow-elevate transition-shadow duration-300 bg-white dark:bg-neutral-dark"
       tabIndex={0}
     >
       <div className="flex flex-col h-full">
@@ -50,9 +50,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             alt={recipe.title}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
           />
-          <div
-            className={`absolute inset-0 ${genderBgClass} mix-blend-multiply`}
-          ></div>
+          <div className={`absolute inset-0 ${genderBgClass} mix-blend-multiply`}></div>
           <button
             onClick={copyIngredients}
             title={copied ? "Kopieret" : "Kopier ingredienser"}
@@ -86,11 +84,11 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             )}
           </button>
         </div>
-        <div className="p-5 flex flex-col flex-grow bg-white">
-          <h2 className="text-lg font-bold text-neutral-darkest mb-2 flex-grow">
+        <div className="p-5 flex flex-col flex-grow bg-white dark:bg-neutral-dark">
+          <h2 className="text-lg font-bold text-neutral-darkest dark:text-white mb-2 flex-grow">
             {recipe.title}
           </h2>
-          <p className="text-sm text-neutral-dark line-clamp-3">
+          <p className="text-sm text-neutral-dark dark:text-neutral-light line-clamp-3">
             {recipe.instructions}
           </p>
         </div>

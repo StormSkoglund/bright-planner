@@ -35,19 +35,19 @@ export default function RecipeDetail() {
     }
   }
 
-  if (loading) return <p className="text-gray-500">Indlæser opskrift...</p>;
+  if (loading) return <p className="text-neutral-muted dark:text-neutral-light">Indlæser opskrift...</p>;
   if (error) return <p className="text-red-500">Fejl: {error}</p>;
   if (!recipe) return <p className="text-red-500">Opskrift ikke fundet.</p>;
 
   return (
-    <main className="max-w-4xl mx-auto page-container py-8">
+  <main className="max-w-4xl mx-auto page-container py-8">
       <div className="mb-6">
-        <Link to="/" className="text-brand-dark hover:underline font-semibold">
+    <Link to="/" className="text-brand-700 dark:text-brand-300 hover:underline font-semibold">
           ← Tilbage til alle opskrifter
         </Link>
       </div>
 
-      <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
+    <article className="bg-white dark:bg-neutral-dark rounded-2xl shadow-soft overflow-hidden">
         <div className="md:flex">
           <div className="p-4 md:p-8 md:w-1/2">
             <img
@@ -59,17 +59,17 @@ export default function RecipeDetail() {
           <div className="p-8 md:w-1/2">
             <div className="flex items-center gap-3 mb-4">
               {recipe.category && (
-                <span className="text-sm font-semibold bg-accent-light text-accent-dark px-3 py-1 rounded-full">
+        <span className="text-sm font-semibold bg-accent-50 text-accent-700 px-3 py-1 rounded-full">
                   {recipe.category}
                 </span>
               )}
               {recipe.serving_for && (
-                <span className="text-sm font-semibold bg-brand-light text-brand-dark px-3 py-1 rounded-full">
+        <span className="text-sm font-semibold bg-brand-50 text-brand-700 px-3 py-1 rounded-full">
                   Til: {recipe.serving_for}
                 </span>
               )}
             </div>
-            <h2 className="text-[clamp(1.25rem,6vw,2rem)] md:text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-neutral-darkest break-words">
+      <h2 className="text-[clamp(1.25rem,6vw,2rem)] md:text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-neutral-darkest dark:text-white break-words">
               {recipe.title}
             </h2>
           </div>
@@ -79,14 +79,14 @@ export default function RecipeDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-start justify-between flex-wrap">
-                <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest">
+        <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest dark:text-white">
                   Ingredienser
                 </h3>
                 <div className="ml-0 sm:ml-4 mt-2 sm:mt-0">
                   <button
                     type="button"
                     onClick={copyIngredients}
-                    className="inline-flex items-center gap-2 px-2 sm:px-3 py-1.5 text-sm font-medium rounded-md border border-neutral-200 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-brand-dark"
+          className="inline-flex items-center gap-2 px-2 sm:px-3 py-1.5 text-sm font-medium rounded-md border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-brand-600 shadow-soft text-neutral-dark dark:text-neutral-light"
                     aria-label={`Kopiér ingredienser for ${recipe.title}`}
                   >
                     {copied ? (
@@ -110,7 +110,7 @@ export default function RecipeDetail() {
                       <>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-neutral-dark"
+                          className="h-4 w-4 text-neutral-dark dark:text-neutral-light"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                           aria-hidden
@@ -128,17 +128,17 @@ export default function RecipeDetail() {
                   </p>
                 </div>
               </div>
-              <ul className="list-disc list-inside space-y-2 text-neutral-dark">
+              <ul className="list-disc list-inside space-y-2 text-neutral-dark dark:text-neutral-light">
                 {recipe.ingredients.map((ing, i) => (
                   <li key={i}>{ing}</li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest">
+              <h3 className="text-[clamp(1rem,3.5vw,1.125rem)] md:text-[clamp(1.125rem,2.5vw,1.25rem)] font-bold mb-4 text-neutral-darkest dark:text-white">
                 Fremgangsmåde
               </h3>
-              <p className="whitespace-pre-line leading-relaxed text-neutral-dark">
+              <p className="whitespace-pre-line leading-relaxed text-neutral-dark dark:text-neutral-light">
                 {recipe.instructions}
               </p>
             </div>

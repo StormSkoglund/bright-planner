@@ -28,9 +28,9 @@ export default function WeekPlannerPrint() {
   if (!week)
     return (
       <main className="page-container py-8 max-w-7xl mx-auto">
-        <p className="text-neutral">Ingen ugeplan fundet.</p>
+        <p className="text-neutral-dark dark:text-neutral-light">Ingen ugeplan fundet.</p>
         <div className="mt-4">
-          <Link to="/week-planner" className="text-blue-600 hover:underline">
+          <Link to="/week-planner" className="text-brand-700 dark:text-brand-300 hover:underline">
             Tilbage
           </Link>
         </div>
@@ -48,7 +48,7 @@ export default function WeekPlannerPrint() {
   }
 
   return (
-    <main className="page-container py-8 max-w-7xl mx-auto text-neutral-dark">
+    <main className="page-container py-8 max-w-7xl mx-auto text-neutral-dark dark:text-neutral-light">
       <h1 className="text-xl font-bold mb-4">Ugeplan</h1>
       <table className="w-full border-collapse text-sm">
         <thead>

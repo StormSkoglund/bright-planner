@@ -215,23 +215,23 @@ export default function WeekPlanner() {
   return (
     <main className="max-w-7xl mx-auto page-container py-8">
       <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Ugeplan</h1>
+        <h1 className="text-2xl font-bold text-neutral-darkest dark:text-white">Ugeplan</h1>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={generateNewWeek}
-            className="px-3 py-2 bg-brand text-white rounded-lg font-semibold hover:bg-brand-dark text-sm"
+            className="px-3 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-semibold shadow-soft text-sm"
           >
             Generer ugeplan
           </button>
           <button
             onClick={() => window.open("/week-planner/print", "_blank")}
-            className="px-3 py-2 bg-neutral text-white rounded-lg font-semibold hover:bg-neutral-dark text-sm"
+            className="px-3 py-2 rounded-lg font-semibold text-sm border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-dark text-neutral-dark hover:bg-neutral-light dark:text-neutral-light dark:hover:bg-neutral-800 shadow-soft"
           >
             Print
           </button>
           <button
             onClick={clearWeek}
-            className="px-2 py-2 bg-neutral-light text-neutral-dark rounded-lg hover:bg-neutral text-sm"
+            className="px-2 py-2 rounded-lg text-sm border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-dark text-neutral-dark hover:bg-neutral-light dark:text-neutral-light dark:hover:bg-neutral-800 shadow-soft"
           >
             Ryd
           </button>
@@ -239,34 +239,31 @@ export default function WeekPlanner() {
       </div>
 
       {loading ? (
-        <p className="text-gray-500">Indlæser opskrifter…</p>
+        <p className="text-neutral-muted dark:text-neutral-light">Indlæser opskrifter…</p>
       ) : (
         <>
-          <div className="hidden lg:block mb-2 text-sm font-semibold">
+          <div className="hidden lg:block mb-2 text-sm font-semibold text-neutral-dark dark:text-neutral-light">
             Dag / Måltid
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {DAYS.map((day) => (
-              <div key={day} className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="font-semibold capitalize mb-4">{day}</div>
-                <div className="space-y-3">
+              <div key={day} className="bg-white dark:bg-neutral-dark rounded-2xl p-5 shadow-soft">
+                <div className="font-semibold capitalize mb-4 text-neutral-darkest dark:text-white">{day}</div>
+                <div className="space-y-2">
                   {MEALS.map((meal) => {
                     const slot = week[day as DayKey][meal as MealKey];
                     const recipe = getRecipeById(slot.id);
                     return (
-                      <div
-                        key={meal}
-                        className="flex items-center justify-between gap-3"
-                      >
+                      <div key={meal} className="flex items-center justify-between gap-3 rounded-xl px-3 py-2 hover:bg-neutral-light dark:hover:bg-neutral-800 transition-colors">
                         <div>
-                          <div className="text-sm font-medium capitalize">
+                          <div className="text-sm font-medium capitalize text-neutral-darkest dark:text-white">
                             {meal}
                           </div>
-                          <div className="text-sm text-neutral-dark">
+                          <div className="text-sm text-neutral-dark dark:text-neutral-light">
                             {recipe ? (
                               recipe.title
                             ) : (
-                              <span className="text-neutral">—</span>
+                              <span className="text-neutral-muted">—</span>
                             )}
                           </div>
                         </div>
@@ -275,12 +272,13 @@ export default function WeekPlanner() {
                             onClick={() =>
                               toggleLock(day as DayKey, meal as MealKey)
                             }
-                            className={`px-2 py-1 rounded-md border text-sm ${
+                            className={`px-2 py-1 rounded-lg border text-sm shadow-soft ${
                               slot.locked
-                                ? "bg-accent text-white border-accent"
-                                : "bg-white text-neutral-dark border-neutral-200"
+                                ? "bg-accent-500 text-white border-accent-500 hover:bg-accent-600"
+                                : "bg-white dark:bg-neutral-dark text-neutral-dark dark:text-neutral-light border-neutral-200 dark:border-neutral-700 hover:bg-neutral-light dark:hover:bg-neutral-800"
                             }`}
                             title={slot.locked ? "Lås" : "Lås op"}
+                            aria-label={slot.locked ? "Lås" : "Lås op"}
                           >
                             {slot.locked ? "🔒" : "🔓"}
                           </button>
@@ -310,8 +308,9 @@ export default function WeekPlanner() {
                                 return next;
                               });
                             }}
-                            className="px-2 py-1 rounded-md border bg-white text-neutral-dark border-neutral-200 text-sm"
+                            className="px-2 py-1 rounded-lg border bg-white dark:bg-neutral-dark text-neutral-dark dark:text-neutral-light border-neutral-200 dark:border-neutral-700 text-sm hover:bg-neutral-light dark:hover:bg-neutral-800 shadow-soft"
                             title="Erstat med tilfældig opskrift"
+                            aria-label="Erstat med tilfældig opskrift"
                           >
                             🔀
                           </button>

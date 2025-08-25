@@ -48,13 +48,13 @@ export default function Home() {
 
   return (
     <main className="max-w-7xl mx-auto page-container py-8">
-      <section className="bg-gradient-to-r from-brand-light to-white rounded-2xl p-4 md:p-8 mb-10 shadow-sm">
+      <section className="bg-gradient-to-r from-brand-50 to-white dark:from-brand-800/40 dark:to-neutral-dark rounded-2xl p-5 md:p-8 mb-10 shadow-soft">
         <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6">
           <div className="text-center md:text-left">
-            <h1 className="text-[clamp(1.25rem,6vw,2.5rem)] md:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-neutral-darkest mb-2 logo-font">
+            <h1 className="text-[clamp(1.4rem,6vw,2.8rem)] md:text-[clamp(1.8rem,4vw,2.6rem)] font-bold text-neutral-darkest dark:text-white mb-2 logo-font">
               BrightPlanner
             </h1>
-            <p className="text-base md:text-lg text-neutral-dark">
+            <p className="text-base md:text-lg text-neutral-dark dark:text-neutral-light">
               Find sunde og lækre opskrifter.
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="placeholder:text-neutral text-sm md:text-base block bg-white w-full border border-neutral-light rounded-md py-2 px-3 md:py-3 md:px-4 pr-10 shadow-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent-light"
+                className="placeholder:text-neutral text-sm md:text-base block bg-white dark:bg-neutral-dark w-full border border-neutral-light dark:border-neutral rounded-md py-2 px-3 md:py-3 md:px-4 pr-10 shadow-soft focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-200"
                 placeholder="Søg efter opskrifter..."
                 type="text"
               />
@@ -73,13 +73,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
+    <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
           <button
             onClick={() => setCategory(null)}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+      className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors shadow-soft ${
               category === null
-                ? "bg-accent text-white shadow-md"
-                : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+        ? "bg-accent text-white"
+        : "bg-white dark:bg-neutral-dark text-neutral-dark dark:text-neutral-light hover:bg-neutral-lightest dark:hover:bg-neutral"
             }`}
           >
             Alle
@@ -88,10 +88,10 @@ export default function Home() {
             <button
               key={opt}
               onClick={() => setCategory(opt)}
-              className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+        className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors shadow-soft ${
                 category === opt
-                  ? "bg-accent text-white shadow-md"
-                  : "bg-white text-neutral-dark hover:bg-neutral-lightest"
+          ? "bg-accent text-white"
+          : "bg-white dark:bg-neutral-dark text-neutral-dark dark:text-neutral-light hover:bg-neutral-lightest dark:hover:bg-neutral"
               }`}
             >
               {opt}
@@ -102,35 +102,35 @@ export default function Home() {
 
       <section>
         <div className="mb-8 text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-neutral-darkest">
+          <h2 className="text-xl md:text-2xl font-bold text-neutral-darkest dark:text-white">
             Måltidsinspiration
           </h2>
-          <p className="text-neutral-dark">
+          <p className="text-neutral-dark dark:text-neutral-light">
             Ikke sikker på, hvad du skal spise? Prøv et tilfældigt forslag!
           </p>
         </div>
         <div className="flex flex-wrap gap-4 justify-center">
           <button
             onClick={() => pickRandomFor("Morgenmad")}
-            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+            className="px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-transform transform hover:scale-105 shadow-elevate"
           >
             Morgenmad
           </button>
           <button
             onClick={() => pickRandomFor("Frokost")}
-            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+            className="px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-transform transform hover:scale-105 shadow-elevate"
           >
             Frokost
           </button>
           <button
             onClick={() => pickRandomFor("Aftensmad")}
-            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+            className="px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-transform transform hover:scale-105 shadow-elevate"
           >
             Aftensmad
           </button>
           <button
             onClick={() => pickRandomFor("Dessert")}
-            className="px-5 py-3 rounded-lg bg-brand text-white font-semibold hover:bg-brand-dark transition-transform transform hover:scale-105 shadow-lg"
+            className="px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-transform transform hover:scale-105 shadow-elevate"
           >
             Dessert
           </button>
@@ -229,7 +229,7 @@ export default function Home() {
         <div className="mt-8">
           {filtered.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-xl text-neutral-dark mb-4">
+              <p className="text-xl text-neutral-dark dark:text-neutral-light mb-4">
                 Ingen opskrifter fundet for "{query}".
               </p>
               <button
@@ -237,7 +237,7 @@ export default function Home() {
                   setQuery("");
                   setCategory(null);
                 }}
-                className="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark shadow-md"
+                className="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark shadow-elevate"
               >
                 Nulstil søgning
               </button>
