@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
-  <rect width="100%" height="100%" fill="#fff"/>
-  <circle cx="200" cy="140" r="90" fill="#fef7e8" stroke="#efe6c8"/>
-  <!-- omelette -->
-  <path d="M140 140 q40 -26 120 -10 q-24 20 -120 30" fill="#ffd86b" stroke="#e6b24a"/>
-  <!-- avocado -->
-  <path d="M220 120 q10 -12 26 -4 q-8 14 -26 24" fill="#9bd19a"/>
-  <text x="200" y="280" font-family="Inter, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle">Veggie Omelette with Avocado</text>
-</svg>

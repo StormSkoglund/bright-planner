@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { useRecipes } from "../data/useRecipes";
+import { copyToClipboard } from "../utils/copyToClipboard";
 
 export default function RecipeDetail() {
   const { id } = useParams();
@@ -10,26 +11,19 @@ export default function RecipeDetail() {
 
   async function copyIngredients() {
     if (!recipe) return;
+    const ingredients = recipe.ingredients ?? [];
     const text =
       `Ingredienser til ${recipe.title}:\n` +
-      recipe.ingredients.map((i) => `- ${i}`).join("\n");
+      ingredients.map((i) => `- ${i}`).join("\n");
 
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
       } else {
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        // keep off-screen
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
+        console.error("Failed to copy ingredients");
       }
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
     } catch (e) {
       console.error("Failed to copy ingredients", e);
     }
@@ -59,12 +53,12 @@ export default function RecipeDetail() {
           <div className="p-8 md:w-1/2">
             <div className="flex items-center gap-3 mb-4">
               {recipe.category && (
-                <span className="text-sm font-semibold bg-accent-light text-accent-dark px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold bg-accent-50 text-accent-700 px-3 py-1 rounded-full">
                   {recipe.category}
                 </span>
               )}
               {recipe.serving_for && (
-                <span className="text-sm font-semibold bg-brand-light text-brand-dark px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold bg-primary-50 text-primary-700 px-3 py-1 rounded-full">
                   Til: {recipe.serving_for}
                 </span>
               )}
@@ -129,7 +123,7 @@ export default function RecipeDetail() {
                 </div>
               </div>
               <ul className="list-disc list-inside space-y-2 text-neutral-dark">
-                {recipe.ingredients.map((ing, i) => (
+                {(recipe.ingredients ?? []).map((ing, i) => (
                   <li key={i}>{ing}</li>
                 ))}
               </ul>

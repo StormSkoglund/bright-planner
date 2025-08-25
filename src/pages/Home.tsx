@@ -159,7 +159,7 @@ export default function Home() {
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-brand-light rounded-lg p-4 flex flex-col items-center text-center">
+                <div className="bg-primary-50 rounded-lg p-4 flex flex-col items-center text-center">
                   {suggestions.mand ? (
                     <Link
                       to={`/recipe/${suggestions.mand.id}`}
@@ -186,7 +186,7 @@ export default function Home() {
                   )}
                 </div>
 
-                <div className="bg-accent-light rounded-lg p-4 flex flex-col items-center text-center">
+                <div className="bg-accent-50 rounded-lg p-4 flex flex-col items-center text-center">
                   {suggestions.kvinde ? (
                     <Link
                       to={`/recipe/${suggestions.kvinde.id}`}
