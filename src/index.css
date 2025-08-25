@@ -43,8 +43,8 @@ body,
 /* Make the page container slightly wider on the smallest screens */
 @media (max-width: 639px) {
   .page-container {
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -100,7 +100,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: url('/bp.png');
+  background-image: url("/bp.png");
   background-repeat: no-repeat;
   background-position: center center;
   /* avoid upscaling the artwork on large viewports to reduce blur
@@ -114,17 +114,17 @@ body::before {
 }
 
 /* Ensure main content sits above the background */
-#root, #root > * {
+#root,
+#root > * {
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 640px) {
   body::before {
-  background-position: center center;
-  /* allow smaller cap on phones so artwork doesn't dominate but keeps crispness */
-  background-size: min(900px, 92vw) auto;
-  opacity: 0.05;
+    background-position: center center;
+    /* allow smaller cap on phones so artwork doesn't dominate but keeps crispness */
+    background-size: min(900px, 92vw) auto;
+    opacity: 0.05;
   }
 }
-
