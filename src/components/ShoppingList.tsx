@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRecipes, type Recipe } from "../data/useRecipes";
+import { copyToClipboard } from "../utils/copyToClipboard";
 
 const STORAGE_KEY = "brightplanner.weekplan.v1";
 
@@ -106,20 +107,13 @@ export default function ShoppingList() {
   async function copyAll() {
     const text = items.map((i) => `- ${i}`).join("\n");
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
       } else {
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
+        console.error("Copy failed");
       }
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
     } catch (e) {
       console.error("Copy failed", e);
     }

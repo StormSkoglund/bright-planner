@@ -2,36 +2,29 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import type { Recipe } from "../data/useRecipes";
 import "./RecipeCard.css";
+import { copyToClipboard } from "../utils/copyToClipboard";
 
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   const [copied, setCopied] = useState(false);
   const genderBgClass =
-    recipe.serving_for === "kvinde"
-      ? "bg-accent-light/50"
-      : "bg-brand-light/50";
+    recipe.serving_for === "kvinde" ? "bg-accent-50/50" : "bg-primary-50/50";
 
   async function copyIngredients(e: React.MouseEvent) {
     // prevent card link navigation when clicking copy
     e.preventDefault();
     e.stopPropagation();
+    const ingredients = recipe.ingredients ?? [];
     const text =
       `Ingredienser til ${recipe.title}:\n` +
-      recipe.ingredients.map((i) => `- ${i}`).join("\n");
+      ingredients.map((i) => `- ${i}`).join("\n");
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
       } else {
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
+        console.error("Copy failed: fallback returned false");
       }
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
     } catch (err) {
       console.error("Copy failed", err);
     }
